@@ -1,7 +1,10 @@
+import SignInForm from "./auth/forms/SignInForm";
+import './index.css';
+
 function App() {
   return (
     <div>
-      Learn React
+      <SignInForm />
     </div>
   );
 }
