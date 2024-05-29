@@ -1,11 +1,9 @@
-import SignInForm from "./auth/forms/SignInForm";
-import './index.css';
+import "./index.css";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <SignInForm />
-    </div>
+      <Home />
   );
 }
 
