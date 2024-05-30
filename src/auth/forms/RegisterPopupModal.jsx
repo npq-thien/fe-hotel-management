@@ -3,41 +3,25 @@ import { TEInput, TERipple } from "tw-elements-react";
 import { FaWindowClose } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
+const RegisterPopupModal = ({ toggleRegisterPopup, switchLogin }) => {
   return (
     <div className="modal">
       <div className="bg-white rounded-lg shadow-lg flex-col flex p-8 gap-5 w-full max-w-md">
         <button
           type="button"
-          onClick={() => toggleLoginPopup(true)}
+          onClick={() => toggleRegisterPopup(true)} // Use the provided onClose prop to close the popup
           className="ml-auto text-2xl text-gray-400 hover:text-gray-500"
         >
           <FaWindowClose size={24} /> 
         </button>
 
         <form className="flex flex-col gap-5">
-          <h2 className="text-center h2-bold">Welcome!</h2>
+          <h2 className="text-center h2-bold">Create new account &#128513;</h2>
+          <TEInput type="email" label="Email" size="lg" className="" />
           <TEInput type="text" label="Username" size="lg" className="" />
           <TEInput type="password" label="Password" size="lg" />
+          <TEInput type="password" label="Confirm password" size="lg" />
         </form>
-
-        {/* Remember me and forgot password */}
-        <div className="flex justify-between">
-          <div className="mb-0.5 block min-h-6 pl-6">
-            <input
-              className="check-box"
-              type="checkbox"
-              id="cb-remember-me"
-              // defaultChecked (Optional for default checked state)
-            />
-            <label className="inline-block ml-2 hover:cursor-pointer" htmlFor="cb-remember-me">
-              Remember me
-            </label>
-          </div>
-          <a href="/" className="text-blue-600">
-            Forgot password
-          </a>
-        </div>
 
         <div className="flex flex-col items-center gap-5">
           <TERipple rippleColor="light" className="w-full">
@@ -46,14 +30,14 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
               type="button"
               style={{ background: "linear-gradient(to right, #7FC7D9, #365486, #0F1035)" }}
             >
-              Log in
+              Register
             </button>
           </TERipple>
 
           <p className="flex gap-2 base-semibold">
-            Don't have an account?
-            <Link onClick={() => switchRegister()} className="text-red-500">
-              Register
+            Already have an account?
+            <Link onClick={() => switchLogin()} className="text-red-500">
+              Login
             </Link>
           </p>
         </div>
@@ -62,4 +46,4 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
   );
 };
 
-export default LoginPopupModal;
+export default RegisterPopupModal;
