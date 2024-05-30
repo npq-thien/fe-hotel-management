@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,jsx}',
-  './components/**/*.{js,jsx}',
-  './app/**/*.{js,jsx}',
-  './src/**/*.{js,jsx}',],
+  content: ['./src/**/*.{js,jsx}',],
   theme: {
+    base: {
+      fontFamily: ['Inter', 'sans-serif'],
+    },
     extend: {
       colors:{},
       fontFamily:{
         inter: ['Inter', 'sans-serif'],
-      }
+      },
     },
   },
   plugins: [require("tw-elements-react/dist/plugin.cjs")]

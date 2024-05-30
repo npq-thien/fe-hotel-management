@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LoginPopupModal, RegisterPopupModal } from "../auth/forms/";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   const [loginPopup, setLoginPopup] = useState(false);
@@ -16,22 +17,20 @@ const Home = () => {
   const switchRegisterAndLogin = () => {
     toggleLoginPopup();
     toggleRegisterPopup();
-  }
+  };
 
   return (
-    <div>
-      <p>This is home</p>
-      <button className="bg-amber-200 p-4" onClick={() => setLoginPopup(true)}>
-        Login
-      </button>
+    <div className="flex flex-col">
+      <Navbar loginPopup={loginPopup} registerPopup={registerPopup}
+        setLoginPopup={setLoginPopup} setRegisterPopup={setRegisterPopup}
+      />
 
+      {/* Render login/register form */}
       {loginPopup && <LoginPopupModal toggleLoginPopup={toggleLoginPopup} switchRegister={switchRegisterAndLogin} />}
 
-      <button className="bg-amber-200 p-4" onClick={() => setRegisterPopup(true)}>
-        Register
-      </button>
-
-      {registerPopup && <RegisterPopupModal toggleRegisterPopup={toggleRegisterPopup} switchLogin={switchRegisterAndLogin} />}
+      {registerPopup && (
+        <RegisterPopupModal toggleRegisterPopup={toggleRegisterPopup} switchLogin={switchRegisterAndLogin} />
+      )}
     </div>
   );
 };

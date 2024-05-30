@@ -12,7 +12,7 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
           onClick={() => toggleLoginPopup(true)}
           className="ml-auto text-2xl text-gray-400 hover:text-gray-500"
         >
-          <FaWindowClose size={24} /> 
+          <FaWindowClose size={24} />
         </button>
 
         <form className="flex flex-col gap-5">
