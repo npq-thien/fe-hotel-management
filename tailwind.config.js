@@ -10,6 +10,7 @@ module.exports = {
       fontFamily:{
         inter: ['Inter', 'sans-serif'],
       },
+      display: ['responsive'],
     },
   },
   plugins: [require("tw-elements-react/dist/plugin.cjs")]
