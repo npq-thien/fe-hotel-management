@@ -8,7 +8,6 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
@@ -19,7 +18,7 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
     };
 
     window.addEventListener("resize", handleResize);
-    
+
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -57,7 +56,7 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
             </Link>
           </div>
 
-          <div className={`flex ${windowWidth > 768 ? 'hidden' : ''}`}>
+          <div className={`flex ${windowWidth > 768 ? "hidden" : ""}`}>
             <button onClick={toggleNavbar}>{mobileDrawerOpen ? <X /> : <Menu />}</button>
           </div>
         </div>
@@ -81,15 +80,12 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
 
             <ul>
               {navbarLinks.map((item, index) => (
-                <li key={index} className="py-4">
+                <li key={index} className="py-4 body-bold">
                   <a href={item.route}>{item.label}</a>
                 </li>
               ))}
             </ul>
-
-            
           </div>
-
         )}
       </div>
     </nav>
