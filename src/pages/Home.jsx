@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { LoginPopupModal, RegisterPopupModal } from "../auth/forms/";
 import Navbar from "../components/Navbar";
+import ImageSlider from "../components/ImageSlider";
 
 const Home = () => {
   const [loginPopup, setLoginPopup] = useState(false);
@@ -21,9 +22,18 @@ const Home = () => {
 
   return (
     <div className="flex flex-col">
-      <Navbar loginPopup={loginPopup} registerPopup={registerPopup}
-        setLoginPopup={setLoginPopup} setRegisterPopup={setRegisterPopup}
-      />
+      <div className="z-20">
+        <Navbar
+          loginPopup={loginPopup}
+          registerPopup={registerPopup}
+          setLoginPopup={setLoginPopup}
+          setRegisterPopup={setRegisterPopup}
+        />
+      </div>
+
+      <div className="z-10">
+        <ImageSlider />
+      </div>
 
       {/* Render login/register form */}
       {loginPopup && <LoginPopupModal toggleLoginPopup={toggleLoginPopup} switchRegister={switchRegisterAndLogin} />}

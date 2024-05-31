@@ -62,7 +62,7 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
         </div>
         {mobileDrawerOpen && windowWidth < 768 && (
           <div
-            className="fixed right-0 z-20 bg-stone-400 w-full
+            className="fixed right-0 z-50 bg-stone-400 w-full
             flex flex-col lg:hidden flex-center justify-center mt-3"
           >
             <div className="flex items-center gap-12 mt-4">
