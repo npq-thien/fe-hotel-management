@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { LoginPopupModal, RegisterPopupModal } from "../auth/forms/";
+import Navbar from "../components/Navbar";
+import ImageSlider from "../components/ImageSlider";
 
 const Home = () => {
   const [loginPopup, setLoginPopup] = useState(false);
@@ -16,22 +18,29 @@ const Home = () => {
   const switchRegisterAndLogin = () => {
     toggleLoginPopup();
     toggleRegisterPopup();
-  }
+  };
 
   return (
-    <div>
-      <p>This is home</p>
-      <button className="bg-amber-200 p-4" onClick={() => setLoginPopup(true)}>
-        Login
-      </button>
+    <div className="flex flex-col">
+      <div className="z-20">
+        <Navbar
+          loginPopup={loginPopup}
+          registerPopup={registerPopup}
+          setLoginPopup={setLoginPopup}
+          setRegisterPopup={setRegisterPopup}
+        />
+      </div>
 
+      <div className="z-10">
+        <ImageSlider />
+      </div>
+
+      {/* Render login/register form */}
       {loginPopup && <LoginPopupModal toggleLoginPopup={toggleLoginPopup} switchRegister={switchRegisterAndLogin} />}
 
-      <button className="bg-amber-200 p-4" onClick={() => setRegisterPopup(true)}>
-        Register
-      </button>
-
-      {registerPopup && <RegisterPopupModal toggleRegisterPopup={toggleRegisterPopup} switchLogin={switchRegisterAndLogin} />}
+      {registerPopup && (
+        <RegisterPopupModal toggleRegisterPopup={toggleRegisterPopup} switchLogin={switchRegisterAndLogin} />
+      )}
     </div>
   );
 };
