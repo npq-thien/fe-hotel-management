@@ -10,12 +10,17 @@ module.exports = {
         }, 
         'primary': {
           DEFAULT: '#FA9191',
-          'default': '#FA9191'
+          'default': '#FA9191',
+          '1': '#febaba',
         },
         'secondary': {
           DEFAULT: '#fef65b',
           'default': '#fef65b',
         },
+        'gold' : {
+          DEFAULT: '#d4af37',
+        }, 
+        
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],

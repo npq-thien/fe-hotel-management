@@ -30,14 +30,15 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
       <div className="relative mx-4">
         <div className="flex justify-between items-center">
           {/* Logo and name */}
-          <div className="flex items-center flex-shrink-0 select-none">
-            <img src="./logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
-            <p className="font-inter body-bold">The Cozy Nook</p>
-          </div>
-
+          <Link to="/">
+            <div className="flex items-center flex-shrink-0 select-none">
+              <img src="./logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
+              <p className="font-inter body-bold">The Cozy Nook</p>
+            </div>
+          </Link>
           <ul className="hidden body-bold md:flex space-x-12">
             {navbarLinks.map((item, index) => (
-              <li key={index}>
+              <li className="hover:text-primary-default" key={index}>
                 <a href={item.route}>{item.label}</a>
               </li>
             ))}
@@ -80,7 +81,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
 
             <ul className="text-center">
               {navbarLinks.map((item, index) => (
-                <li key={index} className="py-4 body-bold">
+                <li key={index} className="py-4 body-bold hover:text-primary-1">
                   <a href={item.route}>{item.label}</a>
                 </li>
               ))}

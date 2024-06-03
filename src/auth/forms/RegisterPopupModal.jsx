@@ -26,7 +26,7 @@ const RegisterPopupModal = ({ toggleRegisterPopup, switchLogin }) => {
         <div className="flex flex-col items-center gap-5">
           <TERipple rippleColor="light" className="w-full">
             <button
-              className="log-in-btn font-bold"
+              className="log-in-btn font-bold text-white"
               type="button"
               style={{ background: "linear-gradient(to right, #7FC7D9, #365486, #0F1035)" }}
             >

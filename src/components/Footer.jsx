@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot, FaSquareXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { aboutUsFooter, moreFooter, productsFooter } from "../constants";
 
@@ -96,28 +96,28 @@ const Footer = () => {
                   </button>
                 </div>
 
-                <div className="flex gap-4 justify-center">
-                  <img
-                    className="hover:cursor-pointer"
-                    src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
-                    width="30"
-                    height="30"
-                    alt="fb"
-                  />
-                  <img
-                    className="hover:cursor-pointer"
-                    src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg"
-                    width="30"
-                    height="30"
-                    alt="tw"
-                  />
-                  <img
-                    className="hover:cursor-pointer"
-                    src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
-                    width="30"
-                    height="30"
-                    alt="inst"
-                  />
+                <div className="flex gap-4">
+                  <a href="https://facebook.com" className="flex justify-center hover:cursor-pointer">
+                    <img
+                      className=""
+                      src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
+                      width="30"
+                      height="30"
+                      alt="fb"
+                    />
+                  </a>
+                  <a href="https://x.com" className="flex justify-center hover:cursor-pointer">
+                    <FaSquareXTwitter className="hover:cursor-pointer w-[30px] h-[40px]" />
+                  </a>
+                  <a href="https://instagram.com" className="flex justify-center hover:cursor-pointer">
+                    <img
+                      className="hover:cursor-pointer"
+                      src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
+                      width="30"
+                      height="30"
+                      alt="inst"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
