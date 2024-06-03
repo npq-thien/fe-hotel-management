@@ -44,3 +44,64 @@ export const slideImages = [
     description: "Stay active during your stay with access to our state-of-the-art fitness center. Featuring a variety of cardio and weight training equipment, it's the perfect place to maintain your workout routine.",
     },
 ];
+
+export const aboutUsFooter = [
+  {
+    url: '#',
+    title: 'Who we are',
+  },
+  {
+    url: '#',
+    title: 'Career',
+  },
+  {
+    url: '#',
+    title: 'Contact',
+  },
+  {
+    url: '#',
+    title: 'News and events',
+  },
+]
+
+export const productsFooter = [
+  {
+    url: '#',
+    title: 'Room & Suite',
+  },
+  {
+    url: '#',
+    title: 'Restaurant',
+  },
+  {
+    url: '#',
+    title: 'Entertainments',
+  },
+  {
+    url: '#',
+    title: 'Booking tickets',
+  },
+]
+
+export const moreFooter = [
+  {
+    url: '#',
+    title: 'Terms and conditions',
+  },
+  {
+    url: '#',
+    title: 'Privacy policy',
+  },
+  {
+    url: '#',
+    title: 'Operating regulations',
+  },
+  {
+    url: '#',
+    title: 'FAQ',
+  },
+]
+
+
+
+

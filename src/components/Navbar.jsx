@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { navbarLinks } from "../constants";
 
-const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) => {
+const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -26,13 +26,13 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
   }, []);
 
   return (
-    <nav className="sticky top-0 z-2 py-3 bg-stone-300 border-b border-neutral-700 backdrop-blur-md">
+    <nav className="sticky top-0 z-2 py-3 bg-stone-300 secondary border-b border-neutral-700 backdrop-blur-md">
       <div className="relative mx-4">
         <div className="flex justify-between items-center">
           {/* Logo and name */}
           <div className="flex items-center flex-shrink-0 select-none">
             <img src="./logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
-            <p className="font-serif body-bold">The Cozy Nook</p>
+            <p className="font-inter body-bold">The Cozy Nook</p>
           </div>
 
           <ul className="hidden body-bold md:flex space-x-12">
@@ -63,7 +63,7 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
         {mobileDrawerOpen && windowWidth < 768 && (
           <div
             className="fixed right-0 z-50 bg-stone-400 w-full
-            flex flex-col lg:hidden flex-center justify-center mt-3"
+            flex flex-col lg:hidden flex-center items-center justify-center mt-3"
           >
             <div className="flex items-center gap-12 mt-4">
               <Link
@@ -78,7 +78,7 @@ const Navbar = ({ loginPopup, registerPopup, setLoginPopup, setRegisterPopup }) 
               </Link>
             </div>
 
-            <ul>
+            <ul className="text-center">
               {navbarLinks.map((item, index) => (
                 <li key={index} className="py-4 body-bold">
                   <a href={item.route}>{item.label}</a>
