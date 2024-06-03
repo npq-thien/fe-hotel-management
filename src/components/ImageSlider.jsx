@@ -21,9 +21,9 @@ const ImageSlider = () => {
                 <div class="absolute inset-0 overflow-hidden bg-black opacity-40"></div>
               </div>
               {/* Description img */}
-              <div className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-                <h2 className="text-3xl">{item.title}</h2>
-                <p>{item.description}</p>
+              <div className="absolute inset-x-[15%] bottom-5 block py-5 text-center text-white">
+                <h2 className="df:text-xl lg:text-3xl">{item.title}</h2>
+                <p className="text-base mt-2 hidden md:block" >{item.description}</p>
               </div>
             </TECarouselItem>
           ))}
