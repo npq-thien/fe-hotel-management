@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { LoginPopupModal, RegisterPopupModal } from "../auth/forms/";
 import Navbar from "../components/Navbar";
-import ImageSlider from "../components/ImageSlider";
 import Footer from "../components/Footer";
-import { slideImages } from "../constants";
+import RoomsGrid from "../components/RoomsGrid";
+import BookForm from "../components/BookForm";
 
-const Home = () => {
+const BookingRoom = () => {
   const [loginPopup, setLoginPopup] = useState(false);
   const [registerPopup, setRegisterPopup] = useState(false);
 
@@ -31,11 +31,9 @@ const Home = () => {
         />
       </div>
 
-      <div className="z-10">
-        <ImageSlider slideImages={slideImages} />
-      </div>
+      <BookForm />
 
-      <main class="mb-auto h-10 bg-green-500">Content</main>
+      <RoomsGrid />
 
       {/* Render login/register form */}
       {loginPopup && <LoginPopupModal toggleLoginPopup={toggleLoginPopup} switchRegister={switchRegisterAndLogin} />}
@@ -49,4 +47,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default BookingRoom;

@@ -10,12 +10,16 @@ module.exports = {
         }, 
         'primary': {
           DEFAULT: '#FA9191',
-          'default': '#FA9191'
+          'default': '#FA9191',
+          '1': '#febaba',
         },
         'secondary': {
-          DEFAULT: '#fef65b',
-          'default': '#fef65b',
+          DEFAULT: '#c5a880',
         },
+        'gold' : {
+          DEFAULT: '#d4af37',
+        }, 
+        
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
@@ -29,5 +33,5 @@ module.exports = {
       display: ["responsive"],
     },
   },
-  plugins: [require("tw-elements-react/dist/plugin.cjs")],
+  plugins: [],
 };
