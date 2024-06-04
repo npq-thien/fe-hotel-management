@@ -6,7 +6,7 @@ import { aboutUsFooter, moreFooter, productsFooter } from "../constants";
 const Footer = () => {
   return (
     <footer className="font-inter bg-cream">
-      <div className="container px-4 py-10 mx-auto">
+      <div className="container py-10 px-5 sm:mx-auto">
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
           <div className="">
             {/* Company information */}
@@ -35,7 +35,7 @@ const Footer = () => {
 
           {/* About us */}
           <div className="flex flex-col">
-            <p className="h3-bold text-primary-default">About us</p>
+            <p className="h3-bold text-primary">About us</p>
             <ul>
               {aboutUsFooter.map((item, key) => (
                 <li key={key}>
@@ -76,9 +76,9 @@ const Footer = () => {
           </div>
 
           {/* Social logos */}
-          <div class="lg:col-span-4 flex flex-col justify-between md:flex-row">
+          <div class="lg:col-span-4 md:col-span-2 flex flex-col justify-between md:flex-row">
             <div className="flex flex-col gap-4">
-              <h1 class="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">
+              <h1 class="max-w-lg text-xl font-semibold tracking-tight text-gray xl:text-2xltext-white">
                 Subscribe us to get an update.
               </h1>
 
@@ -87,7 +87,7 @@ const Footer = () => {
                   <input
                     id="email"
                     type="text"
-                    class="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                    class="px-4 py-2 text-gray-700 bg-white border border-gray-400 rounded-md focus:border-primary-1 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary"
                     placeholder="Email Address"
                   />
 

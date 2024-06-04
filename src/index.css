@@ -91,7 +91,7 @@
   }
 
   .log-in-btn {
-    @apply inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]
+    @apply inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]
   }
 
   /* Room booking page */
@@ -100,6 +100,13 @@
   }
 
   /* Room card */
+  .room-card {
+    @apply block rounded-lg border text-center border-stone-400 m-4 bg-white hover:bg-neutral-800;
+  }
+
+  .booking-form {
+    @apply w-full grid default:grid-cols-1 md:grid-cols-2 xl:grid-cols-5 max-w-7xl;
+  }
 }
 
 @layer components {

@@ -3,6 +3,7 @@ import { LoginPopupModal, RegisterPopupModal } from "../auth/forms/";
 import Navbar from "../components/Navbar";
 import ImageSlider from "../components/ImageSlider";
 import Footer from "../components/Footer";
+import { slideImages } from "../constants";
 
 const Home = () => {
   const [loginPopup, setLoginPopup] = useState(false);
@@ -31,7 +32,7 @@ const Home = () => {
       </div>
 
       <div className="z-10">
-        <ImageSlider />
+        <ImageSlider slideImages={slideImages} />
       </div>
 
       <main class="mb-auto h-10 bg-green-500">Content</main>

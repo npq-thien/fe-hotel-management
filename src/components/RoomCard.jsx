@@ -1,11 +1,10 @@
 import React from "react";
-import { TERipple } from "tw-elements-react";
 
 const RoomCard = ({ name, description, price, imgUrl }) => {
   return (
-    <div className="block rounded-lg border text-center border-stone-400 m-4 bg-white hover:bg-neutral-800 group transition duration-400 ease-in-out">
+    <div className="room-card transition duration-400 ease-in-out group">
       <a href="#!" className="relative block">
-        <img className="rounded-t-lg w-full group-hover:opacity-75" src={imgUrl} alt="" />
+        <img className="rounded-t-lg w-full group-hover:opacity-80" src={imgUrl} alt="" />
         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300 ease-in-out"></div>
       </a>
 
@@ -16,13 +15,11 @@ const RoomCard = ({ name, description, price, imgUrl }) => {
         <p className="my-4 text-base text-stone-400">{description}</p>
 
         {/* Price and book */}
-        <div className="flex justify-between items-center font-semibold font-inter origin-bottom">
+        <div className="flex justify-between items-center font-semibold">
           <p className="text-gold">{price} VND / DAY</p>
-          <TERipple className="bg-primary-default rounded-sm">
-            <button type="button" className="log-in-btn text-black text-sm">
+            <button type="button" className="font-medium px-4 py-2 rounded-md bg-primary text-black active:animate-click-ease-out">
               Book now
             </button>
-          </TERipple>
         </div>
       </div>
     </div>

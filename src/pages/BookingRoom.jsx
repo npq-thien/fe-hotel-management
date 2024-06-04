@@ -3,6 +3,7 @@ import { LoginPopupModal, RegisterPopupModal } from "../auth/forms/";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import RoomsGrid from "../components/RoomsGrid";
+import BookForm from "../components/BookForm";
 
 const BookingRoom = () => {
   const [loginPopup, setLoginPopup] = useState(false);
@@ -29,6 +30,8 @@ const BookingRoom = () => {
           setRegisterPopup={setRegisterPopup}
         />
       </div>
+
+      <BookForm />
 
       <RoomsGrid />
 

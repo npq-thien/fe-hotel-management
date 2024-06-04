@@ -34,5 +34,5 @@ module.exports = {
       display: ["responsive"],
     },
   },
-  plugins: [require("tw-elements-react/dist/plugin.cjs")],
+  plugins: [],
 };

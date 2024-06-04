@@ -1,35 +1,22 @@
 import React from "react";
-import { TECarousel, TECarouselItem } from "tw-elements-react";
-import { slideImages } from "../constants";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const ImageSlider = () => {
+const ImageSlider = ({ slideImages }) => {
   return (
-    <>
-      <TECarousel showControls showIndicators ride="carousel">
-        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-          {slideImages.map((item) => (
-            <TECarouselItem
-              itemID={item.id}
-              className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-            >
-              <div>
-                <img
-                  src={item.url}
-                  className="block w-full lg:h-[768px] object-cover lg:object-contain"
-                  alt={item.title}
-                />
-                <div class="absolute inset-0 overflow-hidden bg-black opacity-40"></div>
-              </div>
-              {/* Description img */}
-              <div className="absolute inset-x-[15%] bottom-5 block py-5 text-center text-white">
-                <h2 className="df:text-xl lg:text-3xl">{item.title}</h2>
-                <p className="text-base mt-2 hidden md:block" >{item.description}</p>
-              </div>
-            </TECarouselItem>
-          ))}
+    <Carousel showThumbs={false} showStatus={false} showArrows={true} 
+      infiniteLoop={true} useKeyboardArrows={true}>
+      {slideImages.map((item) => (
+        <div key={item.id} className="relative">
+          <img src={item.url} alt={item.title} className="block w-full lg:h-[768px] object-cover" />
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-x-[15%] bottom-5 text-center text-white py-5">
+            <h2 className="text-xl lg:text-3xl">{item.title}</h2>
+            <p className="text-base mt-2 hidden md:block">{item.description}</p>
+          </div>
         </div>
-      </TECarousel>
-    </>
+      ))}
+    </Carousel>
   );
 };
 
