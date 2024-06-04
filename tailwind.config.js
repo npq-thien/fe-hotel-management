@@ -14,8 +14,7 @@ module.exports = {
           '1': '#febaba',
         },
         'secondary': {
-          DEFAULT: '#fef65b',
-          'default': '#fef65b',
+          DEFAULT: '#c5a880',
         },
         'gold' : {
           DEFAULT: '#d4af37',
