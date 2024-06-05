@@ -5,8 +5,8 @@ import { aboutUsFooter, moreFooter, productsFooter } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="font-inter bg-cream">
-      <div className="container py-10 px-5 sm:mx-auto">
+    <footer className="bg-cream">
+      <div className="container py-10 px-10 sm:mx-auto">
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
           <div className="">
             {/* Company information */}
@@ -125,7 +125,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-stone-400 text-center py-1">&copy; 2024 The Cozy Nook. All rights reserved</div>
+      <div className="flex items-center justify-center bg-stone-400 text-center py-1">
+        <p>&copy; 2024 The Cozy Nook. All rights reserved</p>
+      </div>
     </footer>
   );
 };
