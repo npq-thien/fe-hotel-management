@@ -6,24 +6,10 @@ import { navbarLinks } from "../constants";
 
 const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <nav className="sticky top-0 z-2 py-3 bg-stone-300 secondary border-b border-neutral-700 backdrop-blur-md">
@@ -57,14 +43,16 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
             </Link>
           </div>
 
-          <div className={`flex ${windowWidth > 768 ? "hidden" : ""}`}>
+          <div className="flex md:hidden">
             <button onClick={toggleNavbar}>{mobileDrawerOpen ? <X /> : <Menu />}</button>
           </div>
         </div>
-        {mobileDrawerOpen && windowWidth < 768 && (
+
+        {/* Dropdown navbar */}
+        {mobileDrawerOpen && (
           <div
-            className="fixed right-0 z-50 bg-stone-400 w-full
-            flex flex-col lg:hidden flex-center items-center justify-center mt-3"
+            className="fixed right-0 z-100 bg-stone-400 w-full
+            flex flex-col md:hidden flex-center items-center justify-center mt-3"
           >
             <div className="flex items-center gap-12 mt-4">
               <Link

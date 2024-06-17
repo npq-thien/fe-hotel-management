@@ -31,7 +31,9 @@ const BookingRoom = () => {
         />
       </div>
 
-      <BookForm />
+      <div className="z-10">
+        <BookForm />
+      </div>
 
       <RoomsGrid />
 
