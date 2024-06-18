@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import { navbarLinks } from "../constants";
+import { navbarLinks } from "../../constants";
 
 const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -18,7 +18,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
           {/* Logo and name */}
           <Link to="/">
             <div className="flex items-center flex-shrink-0 select-none">
-              <img src="./logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
+              <img src="/logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
               <p className="font-inter body-bold">The Cozy Nook</p>
             </div>
           </Link>

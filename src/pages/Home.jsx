@@ -1,5 +1,6 @@
 import React from "react";
-import { ImageSlider, LayoutPage } from "../components";
+import { LayoutPage } from "../components/layout";
+import { ImageSlider } from "../components/";
 import { slideImages } from "../constants";
 
 const BookingRoom = () => {

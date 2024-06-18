@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLocationDot, FaSquareXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { aboutUsFooter, moreFooter, productsFooter } from "../constants";
+import { aboutUsFooter, moreFooter, productsFooter } from "../../constants";
 
 const Footer = () => {
   return (
@@ -10,23 +10,23 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
           <div className="">
             {/* Company information */}
-            <img className="w-12 h-12 mb-2" src="./logo.png" alt="" />
-            <p className="df:text-xl font-semibold font-inter text-primary-default">The Cozy Nook</p>
+            <img className="w-12 h-12 mb-2" src="/logo.png" alt="" />
+            <p className="df:text-xl font-semibold font-inter text-primary">The Cozy Nook</p>
 
             <div className="flex flex-col gap-1 mt-2">
               <div className="flex gap-2 items-center">
-                <FaLocationDot className="text-primary-default" />
+                <FaLocationDot className="text-primary" />
                 <p>Somewhere in Vietnam</p>
               </div>
               <div className="flex gap-2 items-center">
-                <MdEmail className="text-primary-default" />
-                <a className="text-primary-default hover:underline" href="mailto:cozynook@gmail.com">
+                <MdEmail className="text-primary" />
+                <a className="text-primary hover:underline" href="mailto:cozynook@gmail.com">
                   cozynook@gmail.com
                 </a>
               </div>
               <div className="flex gap-2 items-center">
-                <FaLocationDot className="text-primary-default" />
-                <a className="text-primary-default hover:underline" href="tel:0123456789">
+                <FaLocationDot className="text-primary" />
+                <a className="text-primary hover:underline" href="tel:0123456789">
                   0123456789
                 </a>
               </div>
@@ -39,7 +39,7 @@ const Footer = () => {
             <ul>
               {aboutUsFooter.map((item, key) => (
                 <li key={key}>
-                  <a href={item.url} className="hover:text-primary-default">
+                  <a href={item.url} className="hover:text-primary">
                     {item.title}
                   </a>
                 </li>
@@ -49,11 +49,11 @@ const Footer = () => {
 
           {/* Products */}
           <div className="flex flex-col">
-            <p className="h3-bold text-primary-default">Products</p>
+            <p className="h3-bold text-primary">Products</p>
             <ul>
               {productsFooter.map((item, key) => (
                 <li key={key}>
-                  <a href={item.url} className="hover:text-primary-default">
+                  <a href={item.url} className="hover:text-primary">
                     {item.title}
                   </a>
                 </li>
@@ -63,11 +63,11 @@ const Footer = () => {
 
           {/* More */}
           <div className="flex flex-col">
-            <p className="h3-bold text-primary-default">More</p>
+            <p className="h3-bold text-primary">More</p>
             <ul>
               {moreFooter.map((item, key) => (
                 <li key={key}>
-                  <a href={item.url} className="hover:text-primary-default">
+                  <a href={item.url} className="hover:text-primary">
                     {item.title}
                   </a>
                 </li>

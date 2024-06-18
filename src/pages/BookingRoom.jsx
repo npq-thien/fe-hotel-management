@@ -1,8 +1,7 @@
 import React from "react";
 
-import RoomsGrid from "../components/RoomsGrid";
-import BookForm from "../components/BookForm";
-import { LayoutPage } from "../components";
+import { RoomsGrid, BookForm } from "../components/rooms";
+import { LayoutPage } from "components/layout";
 
 const BookingRoom = () => {
   return (

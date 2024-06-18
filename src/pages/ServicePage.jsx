@@ -1,6 +1,7 @@
 import React from "react";
 
-import { LayoutPage, ServicesGrid } from "../components";
+import { ServicesGrid } from "../components/services";
+import { LayoutPage } from "../components/layout";
 
 const BookingRoom = () => {
   return (

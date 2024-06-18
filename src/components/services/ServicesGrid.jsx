@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { serviceInfo } from "../constants/serviceInformation";
-import ServiceCard from "./ServiceCard";
+import { serviceInfo } from "constants/serviceInformation";
+import { ServiceCard } from "../services";
 
 const ServicesGrid = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

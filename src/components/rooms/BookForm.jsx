@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Dropdown from "./Dropdown"; // Ensure you have imported the Dropdown component correctly
+import React, { useState } from "react";
+import { Dropdown } from "../common"; // Ensure you have imported the Dropdown component correctly
 
 const dropdownRooms = [
   { label: "Single bedroom", href: "#" },

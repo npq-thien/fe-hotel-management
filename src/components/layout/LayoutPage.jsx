@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { LoginPopupModal, RegisterPopupModal } from "../auth/forms/";
+// import { LoginPopupModal, RegisterPopupModal } from "../../auth/forms"
+import { LoginPopupModal, RegisterPopupModal } from "auth/forms"
 
-import { Navbar, Footer, } from '../components'
+import { Navbar, Footer } from '../common'
 
 const LayoutPage = ({ children }) => {
   const [loginPopup, setLoginPopup] = useState(false);
