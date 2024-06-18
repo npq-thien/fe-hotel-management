@@ -17,7 +17,7 @@ const RoomCard = ({ name, description, price, imgUrl }) => {
         {/* Price and book */}
         <div className="flex justify-between items-center font-semibold">
           <p className="text-gold">{price} VND / DAY</p>
-            <button type="button" className="font-medium px-4 py-2 rounded-md bg-primary text-black active:animate-click-ease-out">
+            <button type="button" className="font-medium px-4 py-2 rounded-md bg-primary text-white active:animate-click-ease-out transition-all duration-300 hover:bg-primary-1">
               Book now
             </button>
         </div>
