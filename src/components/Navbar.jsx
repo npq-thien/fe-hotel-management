@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
           </Link>
           <ul className="hidden body-bold md:flex space-x-12">
             {navbarLinks.map((item, index) => (
-              <li className="hover:text-primary-default" key={index}>
+              <li className="hover:text-primary" key={index}>
                 <a href={item.route}>{item.label}</a>
               </li>
             ))}
