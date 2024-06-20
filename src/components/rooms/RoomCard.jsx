@@ -17,7 +17,7 @@ const RoomCard = ({ route, name, description, price, imgUrl }) => {
 
         {/* Price and book */}
         <div className="flex justify-between items-center font-semibold">
-          <p className="text-gold">{price} VND / DAY</p>
+          <p className="text-gold">{price} VND / NIGHT</p>
           <Link to={route}>
             <button
               type="button"

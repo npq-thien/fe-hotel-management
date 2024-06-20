@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ImageSliderRoom = ({ data }) => {
+const ImageSliderRoom = ({ imageUrls }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const setActive = (index) => {
@@ -8,11 +8,11 @@ const ImageSliderRoom = ({ data }) => {
   };
 
   const handlePrev = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? data.length - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? imageUrls.length - 1 : prevIndex - 1));
   };
 
   const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex === data.length - 1 ? 0 : prevIndex + 1));
+    setActiveIndex((prevIndex) => (prevIndex === imageUrls.length - 1 ? 0 : prevIndex + 1));
   };
 
   return (
@@ -20,7 +20,7 @@ const ImageSliderRoom = ({ data }) => {
       <div className="relative">
         <img
           className="h-auto w-full max-w-full rounded-lg object-fill md:h-[500px]"
-          src={data[activeIndex].imgelink}
+          src={imageUrls[activeIndex]}
           alt=""
         />
         <button
@@ -38,11 +38,11 @@ const ImageSliderRoom = ({ data }) => {
       </div>
 
       <div className="flex grid-cols-5 gap-4 max-w-4xl justify-center mt-4">
-        {data.map(({ imgelink }, index) => (
+        {imageUrls.map((item, index) => (
           <div key={index}>
             <img
               onClick={() => setActive(index)}
-              src={imgelink}
+              src={item}
               className={`h-20 max-w-full cursor-pointer rounded-lg object-cover object-center ${index === activeIndex ? "ring-4 ring-primary" : ""}`}
               alt="gallery"
             />

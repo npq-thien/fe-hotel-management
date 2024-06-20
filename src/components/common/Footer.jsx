@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLocationDot, FaSquareXTwitter } from "react-icons/fa6";
+import { FaLocationDot, FaSquareXTwitter, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { aboutUsFooter, moreFooter, productsFooter } from "../../constants";
 
@@ -25,7 +25,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex gap-2 items-center">
-                <FaLocationDot className="text-primary" />
+                <FaPhone className="text-primary" />
                 <a className="text-primary hover:underline" href="tel:0123456789">
                   0123456789
                 </a>

@@ -41,10 +41,63 @@ export const roomInfo = [
   },
 ];
 
-const singleRoomInfo = {
-  imageUrl: Array.from(Array(5).keys()),
-  title: "Single bedroom",
-  description:
-    "Perfect for couples or two guests, this room features a spacious layout with a double bed or twin beds and modern amenities.",
-  price: "300.000",
-};
+// const singleRoomInfo = {
+//   imageUrl: Array.from(Array(5).keys()),
+//   title: "Single bedroom",
+//   description:
+//     "Perfect for couples or two guests, this room features a spacious layout with a double bed or twin beds and modern amenities.",
+//   price: "300.000",
+// };
+
+export const roomDetailInfo = [
+  {
+    route: "single",
+    name: "Single bedroom",
+    imageUrls: [
+      "/img/single/1.jpg",
+      "/img/single/2.jpg",
+      "/img/single/3.jpg",
+      "/img/single/4.jpg",
+      "/img/single/5.jpg",
+    ],
+    amenities: [
+      "Air-conditioner",
+      "Wifi, TV, Netflix",
+      "Garden view",
+      "Fitness room",
+      "Breakfast",
+    ],
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, iusto nulla perspiciatis facilis atque, velit eaque nobis, magnam odit obcaecati eos ipsam dolorum explicabo quos totam a voluptatibus voluptas dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit non temporibus consectetur facilis magni similique neque, aut corrupti repudiandae aliquam quasi iste tenetur accusantium consequuntur ipsum, vel qui perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem quod fuga veniam nesciunt natus placeat cupiditate optio magni. Illo tempore nulla, iste reprehenderit quaerat consequuntur velit ducimus reiciendis sint.",
+    size: "20",
+    occupancy: "Two adults",
+    beds: "One standard bed",
+    bathrooms: "Rain shower, hairdryer",
+    price: "300.000",
+  },
+  {
+    route: "double",
+    name: "Double bedroom",
+    imageUrls: [
+      "/img/double/1.jpg",
+      "/img/double/2.jpg",
+      "/img/double/3.jpg",
+      "/img/double/4.jpg",
+    ],
+    amenities: [
+      "Air-conditioner",
+      "Wifi, TV, Netflix",
+      "Sofa, working desk",
+      "Ocean view",
+      "Fitness room",
+      "Breakfast",
+      "Double vanities",
+      "Private pool",
+    ],
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, iusto nulla perspiciatis facilis atque, velit eaque nobis, magnam odit obcaecati eos ipsam dolorum explicabo quos totam a voluptatibus voluptas dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit non temporibus consectetur facilis magni similique neque, aut corrupti repudiandae aliquam quasi iste tenetur accusantium consequuntur ipsum, vel qui perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem quod fuga veniam nesciunt natus placeat cupiditate optio magni. Illo tempore nulla, iste reprehenderit quaerat consequuntur velit ducimus reiciendis sint.",
+    size: "32",
+    occupancy: "Two adults",
+    beds: "One king bed",
+    bathrooms: "Rain shower, separate marble tub, hairdryer",
+    price: "500.000",
+  },
+];
