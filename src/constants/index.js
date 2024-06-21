@@ -17,6 +17,19 @@ export const navbarLinks = [
   },
 ];
 
+export const homeCard = [
+  {
+    img: '/img/home/cozy.jpg', 
+    title: 'Cozy Room',
+    description: 'Experience ultimate comfort in our cozy rooms, perfect for relaxation and tranquility.',
+  },
+  {
+    img: '/img/home/service.jpg',
+    title: 'Special offer',
+    description: 'Enjoy exclusive deals and special offers tailored to enhance your stay.',
+  }
+]
+
 export const slideImages = [
   {
     id: "1",

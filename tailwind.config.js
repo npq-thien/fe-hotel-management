@@ -25,7 +25,7 @@ module.exports = {
           '4': '#3c3c3c',
         },
         'light' : {
-          '1': '#f1f3f6'
+          '1': '#f1f3f6',
         }
         
       },

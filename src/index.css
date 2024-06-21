@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "~@flaticon/flaticon-uicons/css/all/all";
 
 @tailwind base;
 @tailwind components;
@@ -117,6 +118,10 @@
 
   .booking-form {
     @apply w-full grid default:grid-cols-1 md:grid-cols-2 xl:grid-cols-5 max-w-7xl;
+  }
+
+  .home-card {
+    @apply flex text-center m-4 bg-white hover:bg-neutral-800;
   }
 }
 
