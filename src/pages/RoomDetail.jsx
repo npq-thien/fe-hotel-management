@@ -11,7 +11,7 @@ const RoomDetail = () => {
 
   useEffect(() => {
     // Simulated data fetching based on roomId
-    const selectedRoom = roomDetailInfo.find((room) => room.route === `${roomId}`);
+    const selectedRoom = roomDetailInfo.find((room) => room.route === `/room/${roomId}`);
     setRoom(selectedRoom);
     // console.log('room', selectedRoom);
   }, [roomId]);

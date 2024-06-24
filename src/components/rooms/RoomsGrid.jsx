@@ -1,12 +1,12 @@
 import React from "react";
 import { RoomCard } from "../rooms";
-import { roomInfo } from "constants/roomInformation";
+import { roomDetailInfo } from "constants/roomInformation";
 
 const RoomsGrid = () => {
   return (
     <div className="rooms-container justify-center mx-auto m-5">
-      {roomInfo.map((item) => (
-        <RoomCard route={item.route} name={item.title} description={item.description} price={item.price} imgUrl={item.imageUrl} />
+      {roomDetailInfo.map((item) => (
+        <RoomCard route={item.route} name={item.name} description={item.introduction} price={item.price} imgUrl={item.thumbnail} />
       ))}
   </div>
   );

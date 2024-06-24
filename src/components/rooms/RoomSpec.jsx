@@ -26,14 +26,14 @@ const RoomSpec = ({ roomData }) => {
         <FaBed className="text-primary text-2xl" />
         <div>
           <h3 className="text-lg font-medium">Beds</h3>
-          <p className="text-dark-3">King bed or two twin beds</p>
+          <p className="text-dark-3">{roomData.beds}</p>
         </div>
       </div>
       <div className="flex items-start space-x-4">
         <FaBath className="text-primary text-2xl" />
         <div>
           <h3 className="text-lg font-medium">Bathrooms</h3>
-          <p className="text-dark-3">Rain shower, separate marble tub, hairdryer</p>
+          <p className="text-dark-3">{roomData.bathrooms}</p>
         </div>
       </div>
     </div>
