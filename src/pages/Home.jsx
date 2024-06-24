@@ -77,9 +77,11 @@ const BookingRoom = () => {
               can unwind and rejuvenate. Escape to a world of serene beauty and luxury, meticulously curated for your
               ultimate comfort.
             </p>
-            <button className="mr-auto p-2 rounded-md bg-primary text-white hover:bg-primary-1">
-              Book your room now
-            </button>
+            <Link to='/rooms'>
+              <button className="mr-auto p-2 rounded-md bg-primary text-white hover:bg-primary-1">
+                Book your room now
+              </button>
+            </Link>
           </div>
         </div>
 
