@@ -4,7 +4,7 @@ import { LoginPopupModal, RegisterPopupModal } from "auth/forms"
 
 import { Navbar, Footer } from '../common'
 
-const LayoutPage = ({ children }) => {
+const CustomerLayout = ({ children }) => {
   const [loginPopup, setLoginPopup] = useState(false);
   const [registerPopup, setRegisterPopup] = useState(false);
 
@@ -42,4 +42,4 @@ const LayoutPage = ({ children }) => {
   );
 };
 
-export default LayoutPage;
+export default CustomerLayout;

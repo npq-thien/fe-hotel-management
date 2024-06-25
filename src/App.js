@@ -2,8 +2,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 import "./index.css";
-import { Home, BookingRoom, ServicePage } from "./pages";
-import RoomDetail from "./pages/RoomDetail";
+import { Home, BookingRoom, ServicePage } from "./pages/customer";
+import RoomDetail from "./pages/customer/RoomDetail";
 import ScrollToTop from "utils/ScrollToTop";
 
 function App() {

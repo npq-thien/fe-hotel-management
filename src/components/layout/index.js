@@ -1,1 +1,2 @@
-export { default as LayoutPage } from './LayoutPage';
+export { default as CustomerLayout } from './CustomerLayout';
+export { default as AdminLayout } from './AdminLayout';

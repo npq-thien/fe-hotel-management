@@ -10,10 +10,10 @@ import {
   PiWifiHigh,
 } from "react-icons/pi";
 
-import { LayoutPage } from "../components/layout";
-import { ImageSlider } from "../components/";
+import { CustomerLayout } from "../../components/layout";
+import { ImageSlider } from "../../components";
 import { Card } from "components/common";
-import { slideImages, homeCard } from "../constants";
+import { slideImages, homeCard } from "../../constants";
 import { Link } from "react-router-dom";
 import SlickSlider from "components/common/SlickSlider";
 
@@ -55,7 +55,7 @@ const images = [
 
 const BookingRoom = () => {
   return (
-    <LayoutPage>
+    <CustomerLayout>
       <div className="z-10">
         <ImageSlider slideImages={slideImages} />
       </div>
@@ -112,7 +112,7 @@ const BookingRoom = () => {
 
         <SlickSlider images={images} />
       </main>
-    </LayoutPage>
+    </CustomerLayout>
   );
 };
 
