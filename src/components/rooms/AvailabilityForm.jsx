@@ -14,10 +14,10 @@ const dropdownGuests = [
   { label: "2", href: "#" },
   { label: "3", href: "#" },
   { label: "4", href: "#" },
-  { label: "5", href: "#" },
+  { label: "5+", href: "#" },
 ];
 
-const App = () => {
+const BookForm = () => {
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [roomType, setRoomType] = useState("Single bedroom");
@@ -73,4 +73,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default BookForm;
