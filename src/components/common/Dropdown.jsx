@@ -9,12 +9,15 @@ const Dropdown = ({ title, items, width, onChange }) => {
     setIsOpen(!isOpen);
   };
 
+  // console.log('widthne' + items[0].label + width);
+
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative text-left mx-auto">
       <div>
         <button
           type="button"
-          className={"inline-flex text-center justify-center w-" + width + " rounded-md border border-gray-300 shadow-sm px-3 py-2 bg-white text-gray-700 focus:outline-none"}
+          // className={`flex text-center justify-center rounded-md border border-gray-300 shadow-sm px-3 py-2 bg-white text-gray-700 focus:outline-none ${width ? `w-${width}` : 'w-full'}`}
+          className={`inline-flex text-center justify-center rounded-md border border-gray-300 shadow-sm px-3 py-2 bg-white text-gray-700 focus:outline-none ${width ? `w-${width}` : 'w-full'}`}
           id="options-menu"
           aria-expanded="true"
           aria-haspopup="true"
@@ -29,12 +32,13 @@ const Dropdown = ({ title, items, width, onChange }) => {
 
       {isOpen && (
         <div
-          className="origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+          // className={`origin-top-right absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none w-44 ${width ? `w-${width}` : 'w-full'}`}
+          className={`absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${width ? `w-${width}` : 'w-full'}`}
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
         >
-          <div className="py-1" role="none">
+          <div className="py-1" role="none">  
             {items.map((item, index) => (
               <a
                 href={item.href}

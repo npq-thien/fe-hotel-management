@@ -125,6 +125,7 @@
   .home-card {
     @apply flex text-center m-4 bg-white hover:bg-neutral-800;
   }
+  
 }
 
 @layer components {
@@ -134,5 +135,9 @@
 
   .btn-transition-color {
     @apply before:left transition-all
+  }
+
+  .btn-primary {
+    @apply p-2 rounded-md bg-primary text-white hover:bg-primary-1
   }
 }

@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 import "./index.css";
-import { Home, BookingRoom, ServicePage } from "./pages/customer";
+import { BookingPage, Home, RoomPage, ServicePage } from "./pages/customer";
 import RoomDetail from "./pages/customer/RoomDetail";
 import ScrollToTop from "utils/ScrollToTop";
 
@@ -38,6 +38,9 @@ function App() {
       case '/services':
         document.title = 'Services';
         break;
+      case '/booking':
+        document.title = 'Book room';
+        break;
       default:
         document.title = 'Loading...';
     }
@@ -48,9 +51,10 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<BookingRoom />} />
+        <Route path="/rooms" element={<RoomPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/room/:roomId" element={<RoomDetail />} /> {/* Example route for RoomDetail */}
+        <Route path="/booking" element={<BookingPage />} /> {/* Example route for RoomDetail */}
       </Routes>
       <ScrollToTop />
     </div>
