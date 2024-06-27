@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dropdown } from "../common"; // Ensure you have imported the Dropdown component correctly
+import { Dropdown } from ".."; // Ensure you have imported the Dropdown component correctly
 
 const dropdownRooms = [
   { label: "Single bedroom", href: "#" },
@@ -7,6 +7,7 @@ const dropdownRooms = [
   { label: "Deluxe Room", href: "#" },
   { label: "Family Room", href: "#" },
   { label: "Suite", href: "#" },
+  { label: "Penthouse", href: "#" },
 ];
 
 const dropdownGuests = [
@@ -29,7 +30,7 @@ const BookForm = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 max-w-6xl gap-2 bg-gray-800 text-white p-4">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 max-w-7xl gap-2 bg-gray-800 text-white p-4">
         <div className="flex flex-col rounded-xl items-center justify-center border border-stone-700 gap-2 p-5">
           CHECK-IN
           <input
@@ -63,6 +64,7 @@ const BookForm = () => {
             title={selectedGuest}
             items={dropdownGuests}
             onChange={(event) => setSelectedGuest(event.target.value)}
+            // width={32}
           />
         </div>
         <div className="flex flex-col rounded-md items-center justify-center bg-secondary gap-2 p-4 md:col-span-2 lg:p-5 lg:col-span-1 hover:cursor-pointer">

@@ -7,7 +7,7 @@ const ServiceCard = ({ service, title, introduction, imgUrl, isImgLeft }) => {
       {isImgLeft && <img className="md:w-1/2 bg-cover hover:cursor-pointer" src={imgUrl} alt={title} />}
       <div className="flex flex-col justify-between bg-light-1 p-4">
         <div>
-          <h3 className="h3 text-primary" style={{ letterSpacing: "4px" }}>
+          <h3 className="h3 uppercase text-primary" style={{ letterSpacing: "4px" }}>
             {service}
           </h3>
           <h2 className="h2-bold hover:cursor-pointer">{title}</h2>

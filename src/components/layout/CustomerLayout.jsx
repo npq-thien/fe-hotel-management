@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 // import { LoginPopupModal, RegisterPopupModal } from "../../auth/forms"
-import { LoginPopupModal, RegisterPopupModal } from "auth/forms"
-
-import { Navbar, Footer } from '../common'
+import { LoginPopupModal, RegisterPopupModal } from "auth/forms";
+import { Navbar, Footer } from "../common";
 
 const CustomerLayout = ({ children }) => {
   const [loginPopup, setLoginPopup] = useState(false);
@@ -26,7 +25,6 @@ const CustomerLayout = ({ children }) => {
       <div className="z-20">
         <Navbar setLoginPopup={setLoginPopup} setRegisterPopup={setRegisterPopup} />
       </div>
-
 
       <div className="z-10">{children}</div>
 
