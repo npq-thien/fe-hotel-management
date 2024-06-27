@@ -30,14 +30,6 @@ export const homeCard = [
   }
 ]
 
-// export const homeServices = [
-//   {
-//     icon: "",
-//     name: "",
-//   }
-// ]
-
-
 export const slideImages = [
   {
     id: "1",
