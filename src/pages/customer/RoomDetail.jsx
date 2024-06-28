@@ -57,9 +57,11 @@ const RoomDetail = () => {
 
         <RoomAmenities amenitiesData={room} />
 
-        <button className="mx-auto text-white bg-primary p-4 base-medium rounded-md tracking-wider">
-          Make a reservation
-        </button>
+        <Link to='/booking' className="mx-auto">
+          <button className="text-white bg-primary p-4 base-medium rounded-md tracking-wider hover:bg-primary-1">
+            Make a reservation
+          </button>
+        </Link>
 
         {/* Review and rating */}
       </div>

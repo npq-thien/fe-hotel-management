@@ -51,6 +51,9 @@ const images = [
   {
     url: "/img/home/home_8.jpg",
   },
+  {
+    url: "/img/home/home_9.jpg",
+  },
 ];
 
 const BookingRoom = () => {
@@ -102,7 +105,7 @@ const BookingRoom = () => {
             ))}
           </Link>
         </section>
-
+          
         <SlickSlider images={images} />
       </main>
     </CustomerLayout>

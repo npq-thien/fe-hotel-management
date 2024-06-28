@@ -54,7 +54,7 @@ const ImageSlider = ({ slideImages }) => {
           <div className="absolute inset-0 bg-black opacity-40"></div>
           <div className="absolute inset-x-[15%] bottom-5 text-center text-white py-5">
             <h2 className="text-xl lg:text-3xl">{item.title}</h2>
-            <p className="text-base mt-2 hidden md:block">{item.description}</p>
+            <p className="mt-2 hidden md:block">{item.description}</p>
           </div>
         </div>
       ))}
