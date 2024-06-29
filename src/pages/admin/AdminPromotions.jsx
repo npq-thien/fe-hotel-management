@@ -1,14 +1,14 @@
 import { AdminLayout } from "components/layout";
 import React from "react";
 
-const AdminDashboard = () => {
+const AdminPromotions = () => {
   return (
     <AdminLayout>
       <main>
-        Dashboard
+        Promotion
       </main>
     </AdminLayout>
   );
 };
 
-export default AdminDashboard;
+export default AdminPromotions;

@@ -28,7 +28,7 @@ const AdminNavbar = ({ setLogout }) => {
       >
         <div className={`sm:flex md:px-4 flex-col items-center h-full w-full ${mobileNavbarOpen ? "flex" : "hidden"}`}>
           {/* Logo and name */}
-          <div className="flex items-center select-none mb-4 border-black border-b-2">
+          <div className="flex flex-col items-center select-none pb-2 mb-4 border-black border-b-2">
             <img src="/logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
             <p className="hidden md:block font-inter body-bold">The Cozy Nook</p>
           </div>
@@ -56,7 +56,7 @@ const AdminNavbar = ({ setLogout }) => {
             </button>
             
             <div className="hidden md:block text-center tiny-medium w-full pt-2 border-t-2 border-black">
-              <p>© 2024 The Cozy Nook - ADMIN</p>
+              <p>© 2024 The Cozy Nook</p>
               <p>All rights reserved</p>
             </div>
           </div>

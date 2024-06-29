@@ -6,8 +6,8 @@ import { BookingPage, Home, RoomPage, ServicePage } from "./pages/customer";
 import RoomDetail from "./pages/customer/RoomDetail";
 import ScrollToTop from "utils/ScrollToTop";
 
-import AdminNavbar from "components/admin/common/AdminNavbar";
-import AdminDashboard from "pages/admin/AdminDashboard";
+import { AdminDashboard, AdminRooms, AdminServices,
+  AdminBookings, AdminGuests, AdminPromotions} from "./pages/admin";
 
 function App() {
   const location = useLocation();
@@ -61,11 +61,11 @@ function App() {
 
         {/* Admin path */}
         <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/admin/bookings" element={<AdminDashboard />} />
-        <Route path="/admin/guests" element={<AdminDashboard />} />
-        <Route path="/admin/rooms" element={<AdminDashboard />} />
-        <Route path="/admin/services" element={<AdminDashboard />} />
-        <Route path="/admin/promotions" element={<AdminDashboard />} />
+        <Route path="/admin/bookings" element={<AdminBookings />} />
+        <Route path="/admin/guests" element={<AdminGuests />} />
+        <Route path="/admin/rooms" element={<AdminRooms />} />
+        <Route path="/admin/services" element={<AdminServices />} />
+        <Route path="/admin/promotions" element={<AdminPromotions />} />
 
       </Routes>
       <ScrollToTop />
