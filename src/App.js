@@ -7,6 +7,7 @@ import RoomDetail from "./pages/customer/RoomDetail";
 import ScrollToTop from "utils/ScrollToTop";
 
 import AdminNavbar from "components/admin/common/AdminNavbar";
+import AdminDashboard from "pages/admin/AdminDashboard";
 
 function App() {
   const location = useLocation();
@@ -59,7 +60,12 @@ function App() {
         <Route path="/booking" element={<BookingPage />} /> {/* Example route for RoomDetail */}
 
         {/* Admin path */}
-        <Route path="/admin" element={<AdminNavbar />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/bookings" element={<AdminDashboard />} />
+        <Route path="/admin/guests" element={<AdminDashboard />} />
+        <Route path="/admin/rooms" element={<AdminDashboard />} />
+        <Route path="/admin/services" element={<AdminDashboard />} />
+        <Route path="/admin/promotions" element={<AdminDashboard />} />
 
       </Routes>
       <ScrollToTop />
