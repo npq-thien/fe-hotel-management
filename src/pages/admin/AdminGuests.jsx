@@ -6,7 +6,7 @@ const AdminGuests = () => {
   return (
     <AdminLayout>
       <main>
-        <h3 className="h3-semibold mb-4">Booking</h3>
+        <h3 className="h3-semibold mb-4">Guests</h3>
         <GuestTable />
       </main>
     </AdminLayout>

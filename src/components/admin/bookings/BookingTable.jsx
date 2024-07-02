@@ -181,6 +181,66 @@ const initialRows = [
     guests: 1,
     status: "Confirmed",
   },
+  {
+    id: 11,
+    lastName: "Bolton",
+    firstName: "Ramsay",
+    phone: "0123456789",
+    email: "ramsay.bolton@example.com",
+    checkInDate: new Date(2023, 5, 10),
+    checkOutDate: new Date(2023, 5, 14),
+    roomType: "Deluxe",
+    guests: 1,
+    status: "Confirmed",
+  },
+  {
+    id: 12,
+    lastName: "Bolton",
+    firstName: "Ramsay",
+    phone: "0123456789",
+    email: "ramsay.bolton@example.com",
+    checkInDate: new Date(2023, 5, 10),
+    checkOutDate: new Date(2023, 5, 14),
+    roomType: "Deluxe",
+    guests: 1,
+    status: "Confirmed",
+  },
+  {
+    id: 13,
+    lastName: "Bolton",
+    firstName: "Ramsay",
+    phone: "0123456789",
+    email: "ramsay.bolton@example.com",
+    checkInDate: new Date(2023, 5, 10),
+    checkOutDate: new Date(2023, 5, 14),
+    roomType: "Deluxe",
+    guests: 1,
+    status: "Confirmed",
+  },
+  {
+    id: 14,
+    lastName: "Bolton",
+    firstName: "Ramsay",
+    phone: "0123456789",
+    email: "ramsay.bolton@example.com",
+    checkInDate: new Date(2023, 5, 10),
+    checkOutDate: new Date(2023, 5, 14),
+    roomType: "Deluxe",
+    guests: 1,
+    status: "Confirmed",
+  },
+  {
+    id: 15,
+    lastName: "Bolton",
+    firstName: "Ramsay",
+    phone: "0123456789",
+    email: "ramsay.bolton@example.com",
+    checkInDate: new Date(2023, 5, 10),
+    checkOutDate: new Date(2023, 5, 14),
+    roomType: "Deluxe",
+    guests: 1,
+    status: "Confirmed",
+  },
 ];
 
 const UserTable = () => {
@@ -209,13 +269,13 @@ const UserTable = () => {
     setSelectedRow(selection.selectionModel);
   };
 
-  const handleMainClick = () => {
-    setSelectedRow([]);
-  };
+  // const handleMainClick = () => {
+  //   setSelectedRow([]);
+  // };
 
 
   return (
-    <div style={{ height: "100%", width: "1600px" }}>
+    <div style={{ height: 360, width: "1600px" }}>
       <div className="flex-start mb-2">
         <div className="flex gap-2">
           <Button disabled={buttonDisabled} variant="outlined" color="success" onClick={handleConfirm}>
@@ -229,14 +289,17 @@ const UserTable = () => {
       <DataGrid
         rows={rows}
         columns={columns}
+        rowHeight={60}
         initialState={{
           pagination: {
             paginationModel: { page: 0, pageSize: 5 },
           },
         }}
-        pageSizeOptions={[5, 10]}
+        pageSizeOptions={[5, 10, 20]}
+        autoHeight // auto change height when change the page size
         onRowClick={(params) => handleRowClick(params.row)}
         onSelectionModelChange={handleSelectionChange}
+        sx={{ "--unstable_DataGrid-headWeight": "bold" }}
       />
     </div>
   );

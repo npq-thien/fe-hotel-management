@@ -39,13 +39,9 @@ const rows = [
   { id: 10, firstName: 'Hannah', lastName: 'Moore', phone: '0123456789', email: 'hannah.moore@example.com', bookings: 5, spent: 1500 },
 ];
 
-const customStyles = {
-  "--unstable_DataGrid-headWeight": "bold", // Override font-weight
-};
-
 const GuestTable = () => {
   return (
-    <div style={{ height: "100%", width: "50%"}}>
+    <div style={{ height: "100%", width: "100%"}}>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -55,8 +51,9 @@ const GuestTable = () => {
           },
         }}
         pageSizeOptions={[5, 10]}
+        autoHeight // auto change height when change the page size
         checkboxSelection
-      
+        sx={{ "--unstable_DataGrid-headWeight": "bold" }}
       />
     </div>
   );
