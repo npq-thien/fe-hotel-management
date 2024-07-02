@@ -37,7 +37,7 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
         </form>
 
         {/* Remember me and forgot password */}
-        <div className="flex justify-between items-center">
+        <div className="flex-between">
           <div className="block min-h-6 ml-6">
             <input
               className="check-box"

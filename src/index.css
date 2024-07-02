@@ -80,6 +80,11 @@
     @apply text-[10px] font-medium leading-[140%];
   }
 
+  .table-header {
+    /* @apply text-[16px] font-bold; */
+    @apply font-bold;
+  }
+
   .flex-center {
     @apply flex justify-center items-center;
   }
