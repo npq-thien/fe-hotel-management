@@ -52,7 +52,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
         {mobileDrawerOpen && (
           <div
             className="fixed right-0 z-100 bg-stone-400 w-full
-            flex flex-col md:hidden flex-center items-center justify-center mt-3"
+            flex-center flex-col md:hidden flex-center mt-3"
           >
             <div className="flex items-center gap-12 mt-4">
               <Link

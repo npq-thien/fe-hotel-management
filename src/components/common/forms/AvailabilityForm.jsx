@@ -31,7 +31,7 @@ const BookForm = () => {
   return (
     <div className="flex justify-center">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 max-w-7xl gap-2 bg-gray-800 text-white p-4">
-        <div className="flex flex-col rounded-xl items-center justify-center border border-stone-700 gap-2 p-5">
+        <div className="flex-center flex-col rounded-xl border border-stone-700 gap-2 p-5">
           CHECK-IN
           <input
             value={checkInDate}
@@ -40,7 +40,7 @@ const BookForm = () => {
             className="text-black p-1 rounded-md "
           />
         </div>
-        <div className="flex flex-col rounded-md items-center justify-center border border-stone-700 gap-2 p-5">
+        <div className="flex-center flex-col rounded-md border border-stone-700 gap-2 p-5">
           CHECK-OUT
           <input
             value={checkOutDate}
@@ -49,7 +49,7 @@ const BookForm = () => {
             className="text-black p-1 rounded-md"
           />
         </div>
-        <div className="z-20 flex flex-col rounded-md items-center justify-center border border-stone-700 gap-2 p-5">
+        <div className="z-20 flex-center flex-col rounded-md border border-stone-700 gap-2 p-5">
           ROOM TYPE
           <Dropdown
             title={roomType}
@@ -58,7 +58,7 @@ const BookForm = () => {
             width={44}
           />
         </div>
-        <div className="z-10 flex flex-col rounded-md items-center justify-center border border-stone-700 gap-2 p-5">
+        <div className="z-10 flex-center flex-col rounded-md border border-stone-700 gap-2 p-5">
           GUESTS
           <Dropdown
             title={selectedGuest}
@@ -67,7 +67,7 @@ const BookForm = () => {
             // width={32}
           />
         </div>
-        <div className="flex flex-col rounded-md items-center justify-center bg-secondary gap-2 p-4 md:col-span-2 lg:p-5 lg:col-span-1 hover:cursor-pointer">
+        <div className="flex-center flex-col rounded-md bg-secondary gap-2 p-4 md:col-span-2 lg:p-5 lg:col-span-1 hover:cursor-pointer">
           <button className="text-2xl font-semibold p-2 rounded">CHECK AVAILABILITY</button>
         </div>
       </div>

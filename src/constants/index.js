@@ -1,3 +1,6 @@
+import { IoMdPricetags, IoIosBed } from "react-icons/io";
+import { FaCheckToSlot, FaHouse, FaUser, FaBellConcierge } from "react-icons/fa6";
+
 export const navbarLinks = [
   {
     route: "/",
@@ -19,16 +22,16 @@ export const navbarLinks = [
 
 export const homeCard = [
   {
-    img: '/img/home/cozy.jpg', 
-    title: 'Cozy Room',
-    description: 'Experience ultimate comfort in our cozy rooms, perfect for relaxation and tranquility.',
+    img: "/img/home/cozy.jpg",
+    title: "Cozy Room",
+    description: "Experience ultimate comfort in our cozy rooms, perfect for relaxation and tranquility.",
   },
   {
-    img: '/img/home/service.jpg',
-    title: 'Special offer',
-    description: 'Enjoy exclusive deals and special offers tailored to enhance your stay.',
-  }
-]
+    img: "/img/home/service.jpg",
+    title: "Special offer",
+    description: "Enjoy exclusive deals and special offers tailored to enhance your stay.",
+  },
+];
 
 export const slideImages = [
   {
@@ -63,58 +66,91 @@ export const slideImages = [
 
 export const aboutUsFooter = [
   {
-    url: "#",
+    url: "#!",
     title: "Who we are",
   },
   {
-    url: "#",
+    url: "#!",
     title: "Career",
   },
   {
-    url: "#",
+    url: "#!",
     title: "Contact",
   },
   {
-    url: "#",
+    url: "#!",
     title: "News and events",
   },
 ];
 
 export const productsFooter = [
   {
-    url: "#",
+    url: "#!",
     title: "Room & Suite",
   },
   {
-    url: "#",
+    url: "#!",
     title: "Restaurant",
   },
   {
-    url: "#",
+    url: "#!",
     title: "Entertainments",
   },
   {
-    url: "#",
+    url: "#!",
     title: "Booking tickets",
   },
 ];
 
 export const moreFooter = [
   {
-    url: "#",
+    url: "#!",
     title: "Terms and conditions",
   },
   {
-    url: "#",
+    url: "#!",
     title: "Privacy policy",
   },
   {
-    url: "#",
+    url: "#!",
     title: "Operating regulations",
   },
   {
-    url: "#",
+    url: "#!",
     title: "FAQ",
   },
 ];
 
+/////////////////////////////////////// FOR ADMIN ///////////////////////////////////////
+export const adminNavbarLinks = [
+  {
+    route: "/admin",
+    label: "Dashboard",
+    icon: <FaHouse />,
+  },
+  {
+    route: "/admin/bookings",
+    label: "Bookings",
+    icon: <FaCheckToSlot />,
+  },
+  {
+    route: "/admin/guests",
+    label: "Guests",
+    icon: <FaUser />,
+  },
+  {
+    route: "/admin/rooms",
+    label: "Rooms",
+    icon: <IoIosBed />,
+  },
+  {
+    route: "/admin/services",
+    label: "Services",
+    icon: <FaBellConcierge />,
+  },
+  {
+    route: "/admin/promotions",
+    label: "Promotions",
+    icon: <IoMdPricetags />,
+  },
+];
