@@ -10,10 +10,10 @@ import {
   PiWifiHigh,
 } from "react-icons/pi";
 
-import { LayoutPage } from "../components/layout";
-import { ImageSlider } from "../components/";
+import { CustomerLayout } from "../../components/layout";
+import { ImageSlider } from "../../components";
 import { Card } from "components/common";
-import { slideImages, homeCard } from "../constants";
+import { slideImages, homeCard } from "../../constants";
 import { Link } from "react-router-dom";
 import SlickSlider from "components/common/SlickSlider";
 
@@ -51,11 +51,14 @@ const images = [
   {
     url: "/img/home/home_8.jpg",
   },
+  {
+    url: "/img/home/home_9.jpg",
+  },
 ];
 
 const BookingRoom = () => {
   return (
-    <LayoutPage>
+    <CustomerLayout>
       <div className="z-10">
         <ImageSlider slideImages={slideImages} />
       </div>
@@ -77,8 +80,8 @@ const BookingRoom = () => {
               can unwind and rejuvenate. Escape to a world of serene beauty and luxury, meticulously curated for your
               ultimate comfort.
             </p>
-            <Link to='/rooms'>
-              <button className="mr-auto p-2 rounded-md bg-primary text-white hover:bg-primary-1">
+            <Link to='/booking'>
+              <button className="mr-auto btn-primary">
                 Book your room now
               </button>
             </Link>
@@ -102,17 +105,10 @@ const BookingRoom = () => {
             ))}
           </Link>
         </section>
-
-        {/* Images of us*/}
-        {/* <div className="flex flex-col w-full md:flex-row grid-cols-5">
-          {images.map((item) => (
-            <img className="md:w-1/5 p-2 object-cover" src={item.url} alt="images" />
-          ))}
-        </div> */}
-
+          
         <SlickSlider images={images} />
       </main>
-    </LayoutPage>
+    </CustomerLayout>
   );
 };
 

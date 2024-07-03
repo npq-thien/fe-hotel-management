@@ -13,7 +13,7 @@ const Card = ({ data, isReverse, children }) => {
       items-center bg-white group-hover:bg-dark-4 group-hover:text-white">
         {children}
         <h3 className="font-serif text-xl">{data.title}</h3>
-        <p className="text-base text-dark-3 group-hover:text-dark-1">{data.description}</p>
+        <p className="text-dark-3 group-hover:text-dark-1">{data.description}</p>
         {/* Price and book */}
       </div>
     </div>

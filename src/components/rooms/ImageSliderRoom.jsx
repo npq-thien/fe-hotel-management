@@ -25,13 +25,13 @@ const ImageSliderRoom = ({ imageUrls }) => {
         />
         <button
           onClick={handlePrev}
-          className="absolute top-1/2 left-5 transform -translate-y-1/2 bg-gray-700 text-white rounded-full p-2 opacity-45 hover:opacity-80"
+          className="absolute top-1/2 left-0 sm:-left-10 transform -translate-y-1/2 bg-primary-1 text-white rounded-full p-2 opacity-80 hover:bg-primary"
         >
           &lt;
         </button>
         <button
           onClick={handleNext}
-          className="absolute top-1/2 right-5 transform -translate-y-1/2 bg-gray-700 text-white rounded-full p-2 opacity-45 hover:opacity-80"
+          className="absolute top-1/2 right-0 sm:-right-10 transform -translate-y-1/2 bg-primary-1 text-white rounded-full p-2 opacity-80 hover:bg-primary"
         >
           &gt;
         </button>

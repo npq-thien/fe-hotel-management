@@ -10,13 +10,13 @@ const RoomCard = ({ route, name, description, price, imgUrl }) => {
       </Link>
 
       <div className="p-6 group-hover:text-white">
-        <Link to={route} className="mb-2 text-2xl font-semibold font-serif text-stone-800 group-hover:text-white">
+        <Link to={route} className="mb-2 text-2xl font-semibold font-serif text-dark-4 group-hover:text-white">
           {name}
         </Link>
-        <p className="my-4 text-base text-stone-400">{description}</p>
+        <p className="my-4 text-dark-2">{description}</p>
 
         {/* Price and book */}
-        <div className="flex justify-between items-center font-semibold">
+        <div className="flex-between font-semibold">
           <p className="text-gold">{price} VND / NIGHT</p>
           <Link to={route}>
             <button

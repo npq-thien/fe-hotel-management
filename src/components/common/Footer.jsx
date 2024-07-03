@@ -97,7 +97,12 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <a href="https://facebook.com" className="flex justify-center hover:cursor-pointer">
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="flex justify-center hover:cursor-pointer"
+                  >
                     <img
                       className=""
                       src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
@@ -106,10 +111,20 @@ const Footer = () => {
                       alt="fb"
                     />
                   </a>
-                  <a href="https://x.com" className="flex justify-center hover:cursor-pointer">
+                  <a
+                    href="https://x.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="flex justify-center hover:cursor-pointer"
+                  >
                     <FaSquareXTwitter className="hover:cursor-pointer w-[30px] h-[40px]" />
                   </a>
-                  <a href="https://instagram.com" className="flex justify-center hover:cursor-pointer">
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="flex justify-center hover:cursor-pointer"
+                  >
                     <img
                       className="hover:cursor-pointer"
                       src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"

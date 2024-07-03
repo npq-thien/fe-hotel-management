@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { LayoutPage } from "../components/layout"; // Adjust import as per your file structure
-import { roomDetailInfo } from "../constants/roomInformation"; // Adjust import path as per your file structure
-import { ImageSliderRoom, RoomSpec, RoomAmenities } from "../components/rooms";
+import { CustomerLayout } from "../../components/layout"; // Adjust import as per your file structure
+import { roomDetailInfo } from "../../constants/roomInformation"; // Adjust import path as per your file structure
+import { ImageSliderRoom, RoomSpec, RoomAmenities } from "../../components/rooms";
 
 const RoomDetail = () => {
   const { roomId } = useParams();
@@ -18,14 +18,14 @@ const RoomDetail = () => {
 
   if (!room) {
     return (
-      <LayoutPage>
+      <CustomerLayout>
         <div>Loading...</div>
-      </LayoutPage>
+      </CustomerLayout>
     );
   }
   // console.log('room ne', room)
   return (
-    <LayoutPage>
+    <CustomerLayout>
       {/* Banner */}
       <div className="relative">
         <img className="h-80 w-full object-cover block" src="/img/test.jpg" alt="hotel_background" />
@@ -57,13 +57,15 @@ const RoomDetail = () => {
 
         <RoomAmenities amenitiesData={room} />
 
-        <button className="mx-auto text-white bg-primary p-4 base-medium rounded-md tracking-wider">
-          Make a reservation
-        </button>
+        <Link to='/booking' className="mx-auto">
+          <button className="text-white bg-primary p-4 base-medium rounded-md tracking-wider hover:bg-primary-1">
+            Make a reservation
+          </button>
+        </Link>
 
         {/* Review and rating */}
       </div>
-    </LayoutPage>
+    </CustomerLayout>
   );
 };
 

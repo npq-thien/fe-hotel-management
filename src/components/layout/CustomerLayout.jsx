@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 // import { LoginPopupModal, RegisterPopupModal } from "../../auth/forms"
-import { LoginPopupModal, RegisterPopupModal } from "auth/forms"
+import { LoginPopupModal, RegisterPopupModal } from "auth/forms";
+import { Navbar, Footer } from "../common";
 
-import { Navbar, Footer } from '../common'
-
-const LayoutPage = ({ children }) => {
+const CustomerLayout = ({ children }) => {
   const [loginPopup, setLoginPopup] = useState(false);
   const [registerPopup, setRegisterPopup] = useState(false);
 
@@ -27,7 +26,6 @@ const LayoutPage = ({ children }) => {
         <Navbar setLoginPopup={setLoginPopup} setRegisterPopup={setRegisterPopup} />
       </div>
 
-
       <div className="z-10">{children}</div>
 
       {/* Render login/register form */}
@@ -42,4 +40,4 @@ const LayoutPage = ({ children }) => {
   );
 };
 
-export default LayoutPage;
+export default CustomerLayout;
