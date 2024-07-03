@@ -1,29 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import { navbarLinks } from "../constants";
+import { navbarLinks } from "../../constants";
 
 const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <nav className="sticky top-0 z-2 py-3 bg-stone-300 secondary border-b border-neutral-700 backdrop-blur-md">
@@ -32,13 +18,13 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
           {/* Logo and name */}
           <Link to="/">
             <div className="flex items-center flex-shrink-0 select-none">
-              <img src="./logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
+              <img src="/logo.png" alt="Logo hotel" className="w-12 h-12 m-2" />
               <p className="font-inter body-bold">The Cozy Nook</p>
             </div>
           </Link>
           <ul className="hidden body-bold md:flex space-x-12">
             {navbarLinks.map((item, index) => (
-              <li className="hover:text-primary-default" key={index}>
+              <li className="hover:text-primary" key={index}>
                 <a href={item.route}>{item.label}</a>
               </li>
             ))}
@@ -57,14 +43,16 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
             </Link>
           </div>
 
-          <div className={`flex ${windowWidth > 768 ? "hidden" : ""}`}>
+          <div className="flex md:hidden">
             <button onClick={toggleNavbar}>{mobileDrawerOpen ? <X /> : <Menu />}</button>
           </div>
         </div>
-        {mobileDrawerOpen && windowWidth < 768 && (
+
+        {/* Dropdown navbar */}
+        {mobileDrawerOpen && (
           <div
-            className="fixed right-0 z-50 bg-stone-400 w-full
-            flex flex-col lg:hidden flex-center items-center justify-center mt-3"
+            className="fixed right-0 z-100 bg-stone-400 w-full
+            flex flex-col md:hidden flex-center items-center justify-center mt-3"
           >
             <div className="flex items-center gap-12 mt-4">
               <Link

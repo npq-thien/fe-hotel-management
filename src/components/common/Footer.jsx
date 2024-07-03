@@ -1,32 +1,32 @@
 import React from "react";
-import { FaLocationDot, FaSquareXTwitter } from "react-icons/fa6";
+import { FaLocationDot, FaSquareXTwitter, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { aboutUsFooter, moreFooter, productsFooter } from "../constants";
+import { aboutUsFooter, moreFooter, productsFooter } from "../../constants";
 
 const Footer = () => {
   return (
-    <footer className="font-inter bg-cream">
-      <div className="container py-10 px-5 sm:mx-auto">
+    <footer className="bg-cream">
+      <div className="container py-10 px-10 sm:mx-auto">
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
           <div className="">
             {/* Company information */}
-            <img className="w-12 h-12 mb-2" src="./logo.png" alt="" />
-            <p className="df:text-xl font-semibold font-inter text-primary-default">The Cozy Nook</p>
+            <img className="w-12 h-12 mb-2" src="/logo.png" alt="" />
+            <p className="df:text-xl font-semibold font-inter text-primary">The Cozy Nook</p>
 
             <div className="flex flex-col gap-1 mt-2">
               <div className="flex gap-2 items-center">
-                <FaLocationDot className="text-primary-default" />
+                <FaLocationDot className="text-primary" />
                 <p>Somewhere in Vietnam</p>
               </div>
               <div className="flex gap-2 items-center">
-                <MdEmail className="text-primary-default" />
-                <a className="text-primary-default hover:underline" href="mailto:cozynook@gmail.com">
+                <MdEmail className="text-primary" />
+                <a className="text-primary hover:underline" href="mailto:cozynook@gmail.com">
                   cozynook@gmail.com
                 </a>
               </div>
               <div className="flex gap-2 items-center">
-                <FaLocationDot className="text-primary-default" />
-                <a className="text-primary-default hover:underline" href="tel:0123456789">
+                <FaPhone className="text-primary" />
+                <a className="text-primary hover:underline" href="tel:0123456789">
                   0123456789
                 </a>
               </div>
@@ -39,7 +39,7 @@ const Footer = () => {
             <ul>
               {aboutUsFooter.map((item, key) => (
                 <li key={key}>
-                  <a href={item.url} className="hover:text-primary-default">
+                  <a href={item.url} className="hover:text-primary">
                     {item.title}
                   </a>
                 </li>
@@ -49,11 +49,11 @@ const Footer = () => {
 
           {/* Products */}
           <div className="flex flex-col">
-            <p className="h3-bold text-primary-default">Products</p>
+            <p className="h3-bold text-primary">Products</p>
             <ul>
               {productsFooter.map((item, key) => (
                 <li key={key}>
-                  <a href={item.url} className="hover:text-primary-default">
+                  <a href={item.url} className="hover:text-primary">
                     {item.title}
                   </a>
                 </li>
@@ -63,11 +63,11 @@ const Footer = () => {
 
           {/* More */}
           <div className="flex flex-col">
-            <p className="h3-bold text-primary-default">More</p>
+            <p className="h3-bold text-primary">More</p>
             <ul>
               {moreFooter.map((item, key) => (
                 <li key={key}>
-                  <a href={item.url} className="hover:text-primary-default">
+                  <a href={item.url} className="hover:text-primary">
                     {item.title}
                   </a>
                 </li>
@@ -125,7 +125,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-stone-400 text-center py-1">&copy; 2024 The Cozy Nook. All rights reserved</div>
+      <div className="flex items-center justify-center bg-stone-400 text-center py-1">
+        <p>&copy; 2024 The Cozy Nook. All rights reserved</p>
+      </div>
     </footer>
   );
 };
