@@ -63,7 +63,7 @@ const BookingRoom = () => {
         <ImageSlider slideImages={slideImages} />
       </div>
 
-      <main class="flex flex-col z-10 bg-light-1 pt-10 gap-10">
+      <main className="flex flex-col z-10 bg-light-1 pt-10 gap-10">
         <div className="max-w-6xl p-4 gap-6 mx-auto grid grid-cols-1 md:grid-cols-2">
           <div className="w-full max-w-3xl flex gap-4">
             <Card data={homeCard[0]} isReverse={true} children={<GiNightSleep className="text-6xl text-primary-1" />} />

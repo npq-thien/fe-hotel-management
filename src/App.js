@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 import "./index.css";
-import { BookingPage, Home, RoomPage, ServicePage } from "./pages/customer";
+import { BookingPage, Home, ProfilePage, RoomPage, ServicePage } from "./pages/customer";
 import RoomDetail from "./pages/customer/RoomDetail";
 import ScrollToTop from "utils/ScrollToTop";
 
@@ -54,6 +54,7 @@ function App() {
       <Routes>
         {/* Customer path */}
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<ProfilePage />} /> {/* Example route for RoomDetail */}
         <Route path="/rooms" element={<RoomPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/room/:roomId" element={<RoomDetail />} /> {/* Example route for RoomDetail */}
