@@ -6,8 +6,7 @@ import { BookingPage, Home, RoomPage, ServicePage } from "./pages/customer";
 import RoomDetail from "./pages/customer/RoomDetail";
 import ScrollToTop from "utils/ScrollToTop";
 
-import { AdminDashboard, AdminRooms, AdminServices,
-  AdminBookings, AdminGuests, AdminPromotions} from "./pages/admin";
+import { AdminDashboard, AdminRooms, AdminServices, AdminBookings, AdminGuests, AdminPromotions } from "./pages/admin";
 
 function App() {
   const location = useLocation();
@@ -20,22 +19,22 @@ function App() {
       case "/rooms":
         document.title = "Rooms";
         break;
-      case "/room/single":
+      case "/rooms/single":
         document.title = "Single Room";
         break;
-      case "/room/double":
+      case "/rooms/double":
         document.title = "Double Room";
         break;
-      case "/room/family":
+      case "/rooms/family":
         document.title = "Family Room";
         break;
-      case "/room/deluxe":
+      case "/rooms/deluxe":
         document.title = "Deluxe Room";
         break;
-      case "/room/suite":
+      case "/rooms/suite":
         document.title = "Suite Room";
         break;
-      case "/room/penthouse":
+      case "/rooms/penthouse":
         document.title = "Penthouse Room";
         break;
       case "/services":
@@ -56,9 +55,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<RoomPage />} />
         <Route path="/services" element={<ServicePage />} />
-        <Route path="/room/:roomId" element={<RoomDetail />} /> {/* Example route for RoomDetail */}
+        <Route path="/rooms/:roomName" element={<RoomDetail />} /> {/* Example route for RoomDetail */}
         <Route path="/booking" element={<BookingPage />} /> {/* Example route for RoomDetail */}
-
         {/* Admin path */}
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/bookings" element={<AdminBookings />} />
@@ -66,7 +64,6 @@ function App() {
         <Route path="/admin/rooms" element={<AdminRooms />} />
         <Route path="/admin/services" element={<AdminServices />} />
         <Route path="/admin/promotions" element={<AdminPromotions />} />
-
       </Routes>
       <ScrollToTop />
     </div>
