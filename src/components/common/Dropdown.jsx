@@ -23,7 +23,7 @@ const Dropdown = ({ title, items, width, onChange }) => {
           aria-haspopup="true"
           onClick={toggleDropdown}
         >
-          <div class="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             {selectedValue ? selectedValue : title}
             <IoMdArrowDropdown />
           </div>

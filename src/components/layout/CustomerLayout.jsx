@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import { LoginPopupModal, RegisterPopupModal } from "../../auth/forms"
-import { LoginPopupModal, RegisterPopupModal } from "auth/forms";
+import { LoginPopupModal, RegisterPopupModal } from "components/common/forms";
 import { Navbar, Footer } from "../common";
 
 const CustomerLayout = ({ children }) => {

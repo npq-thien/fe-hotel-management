@@ -76,22 +76,22 @@ const Footer = () => {
           </div>
 
           {/* Social logos */}
-          <div class="lg:col-span-4 md:col-span-2 flex flex-col justify-between md:flex-row">
+          <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between md:flex-row">
             <div className="flex flex-col gap-4">
-              <h1 class="max-w-lg text-xl font-semibold tracking-tight text-gray xl:text-2xltext-white">
+              <h1 className="max-w-lg text-xl font-semibold tracking-tight text-gray xl:text-2xltext-white">
                 Subscribe us to get an update.
               </h1>
 
               <div className="flex flex-col justify-between md:flex-row gap-8">
-                <div class="flex flex-col space-y-3 md:space-y-0 md:flex-row">
+                <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row">
                   <input
                     id="email"
                     type="text"
-                    class="px-4 py-2 text-gray-700 bg-white border border-gray-400 rounded-md focus:border-primary-1 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary"
+                    className="px-4 py-2 text-gray-700 bg-white border border-gray-400 rounded-md focus:border-primary-1 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary"
                     placeholder="Email Address"
                   />
 
-                  <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                  <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
                     Subscribe
                   </button>
                 </div>
