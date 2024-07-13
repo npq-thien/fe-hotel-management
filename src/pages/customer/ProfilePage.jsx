@@ -1,14 +1,16 @@
-import axios from "axios";
+import React, { useState } from "react";
+
 import EditableField from "components/common/EditableField";
 import { CustomerLayout } from "components/layout";
-import React, { useState } from "react";
+import { useGetProfile } from "api/customer/profileApi";
+
 
 const ProfilePage = () => {
   const [isEditable, setIsEditable] = useState(false);
 
   const [username, setUsername] = useState("JohnDoe");
 
-  axios.
+  // useGetProfile()
 
   return (
     <CustomerLayout>
