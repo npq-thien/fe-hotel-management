@@ -1,7 +1,6 @@
 import React from "react";
 
 const Card = ({ data, isReverse, children }) => {
-  console.log("revs", isReverse);
   return (
     <div
       className={`flex w-1/2 text-center gap-5 transition md:gap-4 duration-400 group

@@ -1,22 +1,21 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const ENDPOINT = process.env.REACT_APP_API
+const BASE_URL = process.env.REACT_APP_API;
 
-export const api = axios.create({
-  baseURL: `${ENDPOINT}`,
-  timeout: 10000
-})
+const api = axios.create({
+  baseURL: BASE_URL,
+  timeout: 10000,
+});
 
 // api.interceptors.request.use(
 //   (config) => {
-//     let token = localStorage.getItem(LOCAL_STORAGE_ITEM.TOKEN)
+//     const token = localStorage.getItem('token');
 //     if (token && config.headers) {
-//       config.headers['Authorization'] = 'Bearer ' + token
+//       config.headers['Authorization'] = `Bearer ${token}`;
 //     }
-//     return config
+//     return config;
 //   },
-//   (error) => {
-//     // Do something with request error
-//     return Promise.reject(error)
-//   }
-// )
+//   (error) => Promise.reject(error)
+// );
+
+export { api, BASE_URL };
