@@ -8,11 +8,7 @@ import { useMutation } from "react-query";
 import { useRegisterAccount } from "api/authApi";
 
 const RegisterPopupModal = ({ toggleRegisterPopup, switchLogin }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [isRegisterSuccessfully, setIsRegisterSuccessfully] = useState();
@@ -35,10 +31,6 @@ const RegisterPopupModal = ({ toggleRegisterPopup, switchLogin }) => {
     },
   });
 
-  const onSubmit = (data) => {
-    registerAccount(data);
-  };
-
   const handleSnackbarClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -57,18 +49,18 @@ const RegisterPopupModal = ({ toggleRegisterPopup, switchLogin }) => {
           <FaWindowClose size={24} />
         </button>
 
-        <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-5" onSubmit={handleSubmit((data) => registerAccount(data))}>
           <h2 className="text-center h2-bold">Create new account</h2>
           <div className="flex flex-col gap-2">
-            <label htmlFor="fullname" className="text-gray-700">
+            <label htmlFor="fullName" className="text-gray-700">
               Full name
             </label>
             <input
               type="text"
-              id="fullname"
+              id="fullName"
               className="p-2 border rounded-lg"
               placeholder="Enter your full name"
-              {...register("fullname", {
+              {...register("fullName", {
                 required: "Full name is required",
                 pattern: {
                   value: /^[A-Za-z\s]+$/, // Pattern to allow only letters and spaces
@@ -76,7 +68,7 @@ const RegisterPopupModal = ({ toggleRegisterPopup, switchLogin }) => {
                 },
               })}
             />
-            {errors.fullname && <p className="text-red-500">{errors.fullname.message}</p>}
+            {errors.fullName && <p className="text-red-500">{errors.fullName.message}</p>}
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="text-gray-700">

@@ -1,0 +1,22 @@
+import { Home, ProfilePage, RoomPage, ServicePage } from "./pages/customer";
+import RoomDetail from "./pages/customer/RoomDetail";
+import BookingPage from "./pages/customer/BookingPage";
+import { AdminDashboard, AdminRooms, AdminServices, AdminBookings, AdminGuests, AdminPromotions } from "./pages/admin";
+
+export const routes = [
+  // Customer routes
+  { path: "/", element: <Home />, title: "The Cozy Nook" },
+  { path: "/profile", element: <ProfilePage />, title: "Profile" },
+  { path: "/rooms", element: <RoomPage />, title: "Rooms" },
+  { path: "/services", element: <ServicePage />, title: "Services" },
+  { path: "/room/:roomId", element: <RoomDetail />, title: "Room Detail" },
+  { path: "/booking", element: <BookingPage />, title: "Book Room" },
+
+  // Admin routes
+  { path: "/admin", element: <AdminDashboard />, title: "Admin Dashboard" },
+  { path: "/admin/bookings", element: <AdminBookings />, title: "Admin Bookings" },
+  { path: "/admin/guests", element: <AdminGuests />, title: "Admin Guests" },
+  { path: "/admin/rooms", element: <AdminRooms />, title: "Admin Rooms" },
+  { path: "/admin/services", element: <AdminServices />, title: "Admin Services" },
+  { path: "/admin/promotions", element: <AdminPromotions />, title: "Admin Promotions" },
+];

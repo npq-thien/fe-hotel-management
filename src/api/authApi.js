@@ -11,10 +11,9 @@ export const useRegisterAccount = async (data) => {
   }
 }
 
-export const signInAccount = async (data) => {
+export const useSignInAccount = async (data) => {
   try {
     const response = await api.post(`${BASE_URL}/auth/signIn`, data);
-    console.log('Login successful:', response.data);
     return response.data;
   } catch (error) {
     throw error;
