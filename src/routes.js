@@ -8,7 +8,7 @@ export const routes = [
   { path: "/rooms", element: <RoomPage />, title: "Rooms" },
   { path: "/services", element: <ServicePage />, title: "Services" },
   { path: "/promotions", element: <PromotionPage />, title: "Promotions" },
-  { path: "/room/:roomId", element: <RoomDetail />, title: "Room Detail" },
+  { path: "/rooms/:roomId", element: <RoomDetail />, title: "Room Detail" },
   { path: "/booking", element: <BookingPage />, title: "Book Room" },
 
   // Admin routes

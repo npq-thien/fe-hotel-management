@@ -29,8 +29,9 @@ const RoomsGrid = () => {
         </div>
       ) : (
         <div className="rooms-container justify-center mx-auto m-5">
-          {data?.items.map((item) => (
+          {data?.items.map((item, index) => (
             <RoomCard
+              key={index}
               route={item.id}
               name={item.typeName}
               description={item.introduction}

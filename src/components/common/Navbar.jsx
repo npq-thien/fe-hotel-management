@@ -13,7 +13,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
 
 
   const token = useSelector((state) => state.user.token);
-  console.log("selector", token);
+  // console.log("token", token);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
