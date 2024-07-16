@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { FaUser } from "react-icons/fa";
+
 
 import { navbarLinks } from "../../constants";
 
 const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
+
+  const token = useSelector((state) => state.user.token);
+  console.log("selector", token);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
@@ -29,19 +37,27 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
               </li>
             ))}
           </ul>
-
-          <div className="hidden items-center md:flex gap-5 flex-shrink-0">
-            <Link
-              className="py-2 px-4 rounded-md bg-gradient-to-r from-orange-200
+          
+          {/* If signed in show user information */}
+          {isSignedIn ? (
+            <div>
+              <FaUser />
+              <p>{}</p>
+            </div>
+          ) : (
+            <div className="hidden items-center md:flex gap-5 flex-shrink-0">
+              <Link
+                className="py-2 px-4 rounded-md bg-gradient-to-r from-orange-200
               to to-orange-500"
-              onClick={() => setLoginPopup(true)}
-            >
-              Log in
-            </Link>
-            <Link className="p-2 border-2 border-orange-600 rounded-md" onClick={() => setRegisterPopup(true)}>
-              Register
-            </Link>
-          </div>
+                onClick={() => setLoginPopup(true)}
+              >
+                Log in
+              </Link>
+              <Link className="p-2 border-2 border-orange-600 rounded-md" onClick={() => setRegisterPopup(true)}>
+                Register
+              </Link>
+            </div>
+          )}
 
           <div className="flex md:hidden">
             <button onClick={toggleNavbar}>{mobileDrawerOpen ? <X /> : <Menu />}</button>

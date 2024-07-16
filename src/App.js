@@ -10,40 +10,12 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    switch (location.pathname) {
-      case "/":
-        document.title = "The Cozy Nook";
-        break;
-      case "/rooms":
-        document.title = "Rooms";
-        break;
-      case "/room/single":
-        document.title = "Single Room";
-        break;
-      case "/room/double":
-        document.title = "Double Room";
-        break;
-      case "/room/family":
-        document.title = "Family Room";
-        break;
-      case "/room/deluxe":
-        document.title = "Deluxe Room";
-        break;
-      case "/room/suite":
-        document.title = "Suite Room";
-        break;
-      case "/room/penthouse":
-        document.title = "Penthouse Room";
-        break;
-      case "/services":
-        document.title = "Services";
-        break;
-      case "/booking":
-        document.title = "Book room";
-        break;
-      default:
-        document.title = "Loading...";
-    }
+      const route = routes.find((route) => route.path === location.pathname) 
+        if (route && route.title) {
+          document.title = route.title;
+        } else {
+          document.title = "Loading..."
+        }
   }, [location]);
 
   return (

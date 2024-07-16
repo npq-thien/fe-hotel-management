@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import EditableField from "components/common/EditableField";
 import { CustomerLayout } from "components/layout";
-import { useGetProfile } from "api/authApi";
-
 
 const ProfilePage = () => {
   const [isEditable, setIsEditable] = useState(false);
