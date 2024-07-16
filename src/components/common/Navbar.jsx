@@ -33,7 +33,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
           <ul className="hidden body-bold md:flex space-x-12">
             {navbarLinks.map((item, index) => (
               <li className="hover:text-primary" key={index}>
-                <a href={item.route}>{item.label}</a>
+                <Link to={item.route}>{item.label}</Link>
               </li>
             ))}
           </ul>

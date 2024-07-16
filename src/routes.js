@@ -1,6 +1,4 @@
-import { Home, ProfilePage, RoomPage, ServicePage } from "./pages/customer";
-import RoomDetail from "./pages/customer/RoomDetail";
-import BookingPage from "./pages/customer/BookingPage";
+import { Home, ProfilePage, RoomPage, ServicePage, RoomDetail, BookingPage, PromotionPage } from "./pages/customer";
 import { AdminDashboard, AdminRooms, AdminServices, AdminBookings, AdminGuests, AdminPromotions } from "./pages/admin";
 
 export const routes = [
@@ -9,6 +7,7 @@ export const routes = [
   { path: "/profile", element: <ProfilePage />, title: "Profile" },
   { path: "/rooms", element: <RoomPage />, title: "Rooms" },
   { path: "/services", element: <ServicePage />, title: "Services" },
+  { path: "/promotions", element: <PromotionPage />, title: "Promotions" },
   { path: "/room/:roomId", element: <RoomDetail />, title: "Room Detail" },
   { path: "/booking", element: <BookingPage />, title: "Book Room" },
 
