@@ -1,29 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 import { CustomerLayout } from "../../components/layout"; // Adjust import as per your file structure
-import { roomDetailInfo } from "../../constants/roomInformation"; // Adjust import path as per your file structure
 import { ImageSliderRoom, RoomSpec, RoomAmenities } from "../../components/rooms";
+import CustomCircularProgress from "components/common/CustomCircularProgress";
+import { useGetRoomDetailById } from "api/customer/roomApi";
+import { formatPrice } from "utils/helper";
 
 const RoomDetail = () => {
-  const { roomName } = useParams();
-  const [room, setRoom] = useState(null);
+  // const [room, setRoom] = useState(null);
 
-  useEffect(() => {
-    // Simulated data fetching based on roomId
-    const selectedRoom = roomDetailInfo.find((room) => room.route === `/rooms/${roomName}`);
-    setRoom(selectedRoom);
-    // console.log('room', selectedRoom);
-  }, [roomName]);
+  const roomId = useLocation().pathname.split("/")[2];
+
+  const { data: room } = useGetRoomDetailById(roomId);
+  // useEffect(() => {
+  //   if (!room) {
+  //     setRoom(roomData)
+  //   }
+  // }, [room])
+  // console.log(room)
+
 
   if (!room) {
     return (
       <CustomerLayout>
-        <div>Loading...</div>
+        <div className="flex-center m-5">
+          <CustomCircularProgress />
+        </div>
       </CustomerLayout>
     );
   }
-  // console.log('room ne', room)
+
+  if (room) {
+    document.title = room.typeName;
+  }
+
   return (
     <CustomerLayout>
       {/* Banner */}
@@ -32,11 +43,7 @@ const RoomDetail = () => {
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute inset-x-[15%] bottom-[30%] text-center">
           <div className="flex gap-2 items-center justify-center">
-            {/* <Link to="/rooms" className="text-primary-1 font-serif h3-bold lg:h1-bold hover:underline">
-              Rooms
-            </Link> */}
-            {/* <p className="text-xl lg:text-3xl text-white">&gt; {room.name}</p> */}
-            <p className="text-primary-1 font-serif h3-bold lg:h1-bold">{room.name}</p>
+            <p className="text-primary-1 font-serif h3-bold lg:h1-bold">{room.typeName}</p>
           </div>
         </div>
       </div>
@@ -44,16 +51,31 @@ const RoomDetail = () => {
       <nav class="flex p-4 pl-6" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li class="inline-flex items-center">
-            <a href="/rooms" class="inline-flex items-center text-lg font-medium text-gray-700 hover:text-primary-1 dark:text-gray-400 dark:hover:text-white">
+            <Link
+              to="/rooms"
+              class="inline-flex items-center text-lg font-medium text-gray-700 hover:text-primary-1"
+            >
               Rooms
-            </a>
+            </Link>
           </li>
           <li aria-current="page">
             <div class="flex items-center">
-              <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              <svg
+                class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 9 4-4-4-4"
+                />
               </svg>
-              <span class="ms-1 text-lg font-medium text-gray-500 md:ms-2 dark:text-gray-400">{room.name}</span>
+              <span class="ms-1 text-lg font-medium text-gray-500 md:ms-2 dark:text-gray-400">{room.typeName}</span>
             </div>
           </li>
         </ol>
@@ -66,7 +88,7 @@ const RoomDetail = () => {
         <div className="flex flex-col gap-2 justify-center mx-auto max-w-4xl">
           <div className="flex sm:flex-row sm:justify-between sm:items-center flex-col ">
             <h2 className="font-serif h3-semibold md:h1-semibold">{room.name}</h2>
-            <p className="text-gold md:text-[20px] font-semibold ">{room.price} VND / NIGHT</p>
+            <p className="text-gold md:text-[20px] font-semibold ">{formatPrice(room.price)} VND / NIGHT</p>
           </div>
 
           <p className="text-dark-2 tracking-wide">{room.description}</p>
@@ -76,7 +98,7 @@ const RoomDetail = () => {
 
         <RoomAmenities amenitiesData={room} />
 
-        <Link to='/booking' className="mx-auto">
+        <Link to="/booking" className="mx-auto">
           <button className="text-white bg-primary p-4 base-medium rounded-md tracking-wider hover:bg-primary-1">
             Make a reservation
           </button>

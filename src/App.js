@@ -5,24 +5,20 @@ import "./index.css";
 import ScrollToTop from "utils/ScrollToTop";
 import { routes } from "./routes";
 
-
 function App() {
   const location = useLocation();
 
   useEffect(() => {
-      const route = routes.find((route) => route.path === location.pathname) 
-        if (route && route.title) {
-          document.title = route.title;
-        } else {
-          document.title = "Loading..."
-        }
+    const route = routes.find((route) => route.path === location.pathname);
+    if (route && route.title) document.title = route.title;
+      else document.title = "Loading...";
   }, [location]);
 
   return (
     <div className="App">
       <Routes>
-        {routes.map((item) => (
-          <Route path={item.path} element={item.element} />
+        {routes.map((item, index) => (
+          <Route key={index} path={item.path} element={item.element} />
         ))}
       </Routes>
       <ScrollToTop />
