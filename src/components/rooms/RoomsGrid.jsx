@@ -1,14 +1,46 @@
 import React from "react";
+import { useQuery } from "react-query";
+
 import { RoomCard } from "../rooms";
-import { roomDetailInfo } from "constants/roomInformation";
+import { useGetAllRooms } from "api/customer/roomApi";
+import { QUERY_KEYS } from "libs/react-query/queryKey";
+import { formatPrice } from "utils/helper";
+import CustomCircularProgress from "components/common/CustomCircularProgress";
 
 const RoomsGrid = () => {
+  const {
+    data,
+    error,
+  } = useQuery({
+    queryKey: [QUERY_KEYS.GET_ROOMS],
+    queryFn: useGetAllRooms,
+    onError: (error) => {
+      console.log("fail room", error);
+    },
+    refetchOnWindowFocus: false,
+  });
+
+
   return (
-    <div className="rooms-container justify-center mx-auto m-5">
-      {roomDetailInfo.map((item) => (
-        <RoomCard route={item.route} name={item.name} description={item.introduction} price={item.price} imgUrl={item.thumbnail} />
-      ))}
-  </div>
+    <>
+      {!data ? (
+        <div className="flex-center m-5">
+          <CustomCircularProgress />
+        </div>
+      ) : (
+        <div className="rooms-container justify-center mx-auto m-5">
+          {data?.items.map((item) => (
+            <RoomCard
+              route={item.id}
+              name={item.typeName}
+              description={item.introduction}
+              price={formatPrice(item.price)}
+              imgUrl={item.thumbnail}
+            />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 
