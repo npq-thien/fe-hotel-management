@@ -6,15 +6,15 @@ import { roomDetailInfo } from "../../constants/roomInformation"; // Adjust impo
 import { ImageSliderRoom, RoomSpec, RoomAmenities } from "../../components/rooms";
 
 const RoomDetail = () => {
-  const { roomId } = useParams();
+  const { roomName } = useParams();
   const [room, setRoom] = useState(null);
 
   useEffect(() => {
     // Simulated data fetching based on roomId
-    const selectedRoom = roomDetailInfo.find((room) => room.route === `/room/${roomId}`);
+    const selectedRoom = roomDetailInfo.find((room) => room.route === `/rooms/${roomName}`);
     setRoom(selectedRoom);
     // console.log('room', selectedRoom);
-  }, [roomId]);
+  }, [roomName]);
 
   if (!room) {
     return (
@@ -32,13 +32,32 @@ const RoomDetail = () => {
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute inset-x-[15%] bottom-[30%] text-center">
           <div className="flex gap-2 items-center justify-center">
-            <Link to="/rooms" className="text-primary-1 font-serif h3-bold lg:h1-bold hover:underline">
+            {/* <Link to="/rooms" className="text-primary-1 font-serif h3-bold lg:h1-bold hover:underline">
               Rooms
-            </Link>
-            <p className="text-xl lg:text-3xl text-white">&gt; {room.name}</p>
+            </Link> */}
+            {/* <p className="text-xl lg:text-3xl text-white">&gt; {room.name}</p> */}
+            <p className="text-primary-1 font-serif h3-bold lg:h1-bold">{room.name}</p>
           </div>
         </div>
       </div>
+      {/* <!-- Breadcrumb --> */}
+      <nav class="flex p-4 pl-6" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+          <li class="inline-flex items-center">
+            <a href="/rooms" class="inline-flex items-center text-lg font-medium text-gray-700 hover:text-primary-1 dark:text-gray-400 dark:hover:text-white">
+              Rooms
+            </a>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              </svg>
+              <span class="ms-1 text-lg font-medium text-gray-500 md:ms-2 dark:text-gray-400">{room.name}</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
 
       {/* Room detail */}
       <div className="flex flex-col gap-4 m-4">

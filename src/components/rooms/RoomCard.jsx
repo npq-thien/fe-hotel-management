@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const RoomCard = ({ route, name, description, price, imgUrl }) => {
+  console.log(route)
   return (
     <div className="room-card transition duration-400 ease-in-out group">
       <Link to={route} className="relative block">

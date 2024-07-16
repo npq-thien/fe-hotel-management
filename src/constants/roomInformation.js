@@ -43,7 +43,7 @@
 
 export const roomDetailInfo = [
   {
-    route: "/room/single",
+    route: "/rooms/single",
     name: "Single bedroom",
     thumbnail: "/img/single_room.jpg",
     imageUrls: [
@@ -65,7 +65,7 @@ export const roomDetailInfo = [
     price: "300.000",
   },
   {
-    route: "/room/double",
+    route: "/rooms/double",
     name: "Double bedroom",
     thumbnail: "/img/double_room.jpg",
     imageUrls: ["/img/double/1.jpg", "/img/double/2.jpg", "/img/double/3.jpg", "/img/double/4.jpg"],
@@ -88,7 +88,7 @@ export const roomDetailInfo = [
     price: "500.000",
   },
   {
-    route: "/room/deluxe",
+    route: "/rooms/deluxe",
     name: "Deluxe room",
     thumbnail: "/img/deluxe_room.jpg",
     imageUrls: [
@@ -121,10 +121,16 @@ export const roomDetailInfo = [
     price: "800.000",
   },
   {
-    route: "/room/family",
+    route: "/rooms/family",
     name: "Family room",
     thumbnail: "/img/family_room.jpg",
-    imageUrls: ["/img/family/1.jpg", "/img/family/2.jpg", "/img/family/3.jpg", "/img/family/4.jpg", "/img/family/5.jpg"],
+    imageUrls: [
+      "/img/family/1.jpg",
+      "/img/family/2.jpg",
+      "/img/family/3.jpg",
+      "/img/family/4.jpg",
+      "/img/family/5.jpg",
+    ],
     amenities: [
       "Air-conditioner",
       "Wifi, TV, Netflix",
@@ -146,7 +152,7 @@ export const roomDetailInfo = [
     price: "1.000.000",
   },
   {
-    route: "/room/suite",
+    route: "/rooms/suite",
     name: "Suite",
     thumbnail: "/img/suite.jpg",
     imageUrls: ["/img/suite/1.jpg", "/img/suite/2.jpg", "/img/suite/3.jpg", "/img/suite/4.jpg", "/img/suite/5.jpg"],
@@ -172,7 +178,7 @@ export const roomDetailInfo = [
     price: "2.000.000",
   },
   {
-    route: "/room/penthouse",
+    route: "/rooms/penthouse",
     name: "Penthouse",
     thumbnail: "/img/penthouse.jpg",
     imageUrls: [
