@@ -1,4 +1,3 @@
-// import { useQuery } from '@tanstack/react-query'
 import { api } from 'configs/AxiosConfig'
 import { BASE_URL } from 'constants/endpoint'
 
