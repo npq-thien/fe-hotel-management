@@ -8,8 +8,6 @@ const ServicesGrid = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { data: services } = useGetAllServices();
 
-  console.log('aa', services)
-
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);

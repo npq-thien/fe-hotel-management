@@ -1,6 +1,6 @@
 import { api } from "configs/AxiosConfig";
 import { BASE_URL } from "constants/endpoint";
-import { QUERY_KEYS } from "libs/react-query/queryKey";
+import { QUERY_KEYS } from "api/queryKey";
 import { useQuery } from "react-query";
 
 export const useGetAllRooms = () => {
