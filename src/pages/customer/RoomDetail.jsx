@@ -8,18 +8,9 @@ import { useGetRoomDetailById } from "api/customer/roomApi";
 import { formatPrice } from "utils/helper";
 
 const RoomDetail = () => {
-  // const [room, setRoom] = useState(null);
-
   const roomId = useLocation().pathname.split("/")[2];
 
   const { data: room } = useGetRoomDetailById(roomId);
-  // useEffect(() => {
-  //   if (!room) {
-  //     setRoom(roomData)
-  //   }
-  // }, [room])
-  // console.log(room)
-
 
   if (!room) {
     return (

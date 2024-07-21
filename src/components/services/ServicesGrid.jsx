@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { serviceInfo } from "constants/serviceInformation";
+
 import { ServiceCard } from "../services";
+import { useGetAllServices } from "api/customer/serviceApi";
+import CustomCircularProgress from "components/common/CustomCircularProgress";
 
 const ServicesGrid = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { data: services } = useGetAllServices();
+
+  console.log('aa', services)
 
   useEffect(() => {
     const handleResize = () => {
@@ -12,30 +17,38 @@ const ServicesGrid = () => {
     window.addEventListener("resize", handleResize);
   }, [windowWidth]);
 
-  // This is medium device
+  if (!services) {
+    return (
+      <div className="flex-center m-5">
+        <CustomCircularProgress />
+      </div>
+    );
+  }
+
+  // Medium device++ will show services with left/right thumbnail
   if (windowWidth > 768)
     return (
       <div className="justify-center mx-auto m-5">
-        {serviceInfo.map((item, index) => (
+        {(services.items).map((item, index) => (
           <ServiceCard
-            service={item.service}
+            service={item.serviceName}
             title={item.title}
             introduction={item.introduction}
-            imgUrl={item.url}
+            imgUrl={item.thumbnail}
             isImgLeft={index % 2 === 0}
           />
         ))}
       </div>
     );
-  else 
+  else
     return (
       <div className="justify-center mx-auto m-5">
-        {serviceInfo.map((item) => (
+        {(services.items).map((item) => (
           <ServiceCard
-            service={item.service}
+            service={item.serviceName}
             title={item.title}
             introduction={item.introduction}
-            imgUrl={item.url}
+            imgUrl={item.thumbnail}
             isImgLeft={true}
           />
         ))}
