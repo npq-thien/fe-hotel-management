@@ -1,24 +1,12 @@
 import React from "react";
-import { useQuery } from "react-query";
 
 import { RoomCard } from "../rooms";
 import { useGetAllRooms } from "api/customer/roomApi";
-import { QUERY_KEYS } from "libs/react-query/queryKey";
 import { formatPrice } from "utils/helper";
 import CustomCircularProgress from "components/common/CustomCircularProgress";
 
 const RoomsGrid = () => {
-  const {
-    data,
-    error,
-  } = useQuery({
-    queryKey: [QUERY_KEYS.GET_ROOMS],
-    queryFn: useGetAllRooms,
-    onError: (error) => {
-      console.log("fail room", error);
-    },
-    refetchOnWindowFocus: false,
-  });
+  const {data} = useGetAllRooms();
 
 
   return (
