@@ -27,8 +27,9 @@ const ServicesGrid = () => {
   if (windowWidth > 768)
     return (
       <div className="justify-center mx-auto m-5">
-        {(services.items).map((item, index) => (
+        {services.items.map((item, index) => (
           <ServiceCard
+            key={item.id}
             service={item.serviceName}
             title={item.title}
             introduction={item.introduction}
@@ -41,8 +42,9 @@ const ServicesGrid = () => {
   else
     return (
       <div className="justify-center mx-auto m-5">
-        {(services.items).map((item) => (
+        {services.items.map((item) => (
           <ServiceCard
+            key={item.id}
             service={item.serviceName}
             title={item.title}
             introduction={item.introduction}

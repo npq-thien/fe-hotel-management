@@ -36,7 +36,7 @@ const BookingPage = () => {
     <CustomerLayout>
       <div className="bg-light-1 py-10 px-4">
         <div className="bg-white rounded-lg shadow-lg flex flex-col p-6 gap-5 w-full max-w-2xl mx-auto">
-          <h2 className="h3-semibold mx-auto">Hotel Booking</h2>
+          <h2 className="h3-semibold mx-auto">Book room</h2>
           {/* Name */}
           <div>
             <h3 className="mb-2 font-semibold">
@@ -124,13 +124,16 @@ const BookingPage = () => {
 
           {/* Special note */}
           <div>
-            <h3 className="mb-2 font-semibold">Do you have any special requests?</h3>
+            <h3 className="font-semibold">Do you have any special requests?</h3>
             <textarea className="w-full border rounded-md p-2" name="request" cols="40" rows="5"></textarea>
           </div>
 
-          <button className="uppercase btn-primary p-3">
-            Book now
-          </button>
+          {/* Voucher */}
+          <div>
+            <h3 className="mb-2 font-semibold">Promotion code</h3>
+            <input type="text" className="w-full border rounded-md p-2" />
+          </div>
+          <button className="uppercase btn-primary p-3">Book now</button>
         </div>
       </div>
     </CustomerLayout>
