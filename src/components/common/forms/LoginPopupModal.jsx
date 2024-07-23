@@ -7,8 +7,7 @@ import { Alert, Snackbar } from "@mui/material";
 import { useDispatch } from 'react-redux'
 
 import { useSignInAccount } from "api/authApi";
-import { setToken } from "store/userSlice";
-
+import { login } from "store/userSlice";
 
 const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
   const {
@@ -35,16 +34,16 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
     error,
   } = useMutation({
     mutationFn: useSignInAccount,
-    onSuccess: (data) => {
-      // console.log('Login successfully ', data);
-      setShowSnackbar(true)
+    onSuccess: async (data) => {
       setIsSignInSuccessfully(true)
-      dispatch(setToken(data))
+      dispatch(login(data))
+      setShowSnackbar(true)
+      await new Promise(r => setTimeout(r, 1000))
+      window.location.reload();
     },
     onError: (error) => {
       setShowSnackbar(true)
       setIsSignInSuccessfully(false)
-      // console.log('Login failed ', error.response.data.message);
     },
   });
 
@@ -91,47 +90,42 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
             />
             {errors.password && <p className="text-red-500">{errors.password.message}</p>}
           </div>
+
+          {/* Remember me and forgot password */}
+          <div className="flex-between">
+            <div className="block min-h-6 ml-6">
+              <input className="check-box" type="checkbox" id="cb-remember-me" />
+              <label className="inline-block ml-1 hover:cursor-pointer" htmlFor="cb-remember-me">
+                Remember me
+              </label>
+            </div>
+            <a href="#!" className="text-blue-600">
+              Forgot password
+            </a>
+          </div>
+
+          <div className="flex flex-col items-center gap-5">
+            <button
+              className="log-in-btn font-bold text-white w-full py-2 rounded-lg"
+              type="submit"
+              style={{
+                background: "linear-gradient(to right, #7FC7D9, #365486, #0F1035)",
+              }}
+              onClick={handleSubmit(onSubmit)}
+              disabled={isLoading}
+            >
+              {isLoading ? "Logging in..." : "Log in"}
+            </button>
+
+            <p className="flex gap-2 base-semibold">
+              Don't have an account?
+              <Link onClick={() => switchRegister()} className="text-red-500">
+                Register
+              </Link>
+            </p>
+          </div>
         </form>
 
-        {/* Remember me and forgot password */}
-        <div className="flex-between">
-          {/* There's no remember me in Restful web but if i invisible this div it will be a little bit empty
-          So don't care about it */}
-          <div className="block min-h-6 ml-6">
-            <input className="check-box" type="checkbox" id="cb-remember-me" />
-            <label className="inline-block ml-1 hover:cursor-pointer" htmlFor="cb-remember-me">
-              Remember me
-            </label>
-          </div>
-          <a href="#!" className="text-blue-600">
-            Forgot password
-          </a>
-        </div>
-
-        <div className="flex flex-col items-center gap-5">
-          <button
-            className="log-in-btn font-bold text-white w-full py-2 rounded-lg"
-            type="submit"
-            style={{
-              background: "linear-gradient(to right, #7FC7D9, #365486, #0F1035)",
-            }}
-            onClick={handleSubmit(onSubmit)} // Call handleLogin on button click
-            disabled={isLoading} // Disable button when loading
-          >
-            {isLoading ? "Logging in..." : "Log in"}
-          </button>
-
-          {/* {isError && <p className="text-red-500">Error: {error.message}</p>} */}
-
-          <p className="flex gap-2 base-semibold">
-            Don't have an account?
-            <Link onClick={() => switchRegister()} className="text-red-500">
-              Register
-            </Link>
-          </p>
-        </div>
-
-        {/* Snackbar to show sign in status */}
         <Snackbar
           open={showSnackbar}
           autoHideDuration={3000}
@@ -141,7 +135,7 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
         >
           {isSignInSuccessfully ? (
             <Alert elevation={6} variant="filled" onClose={handleSnackbarClose} severity="success">
-              Registration successful
+              Login successfully
             </Alert>
           ) : (
             <Alert elevation={6} variant="filled" onClose={handleSnackbarClose} severity="error">

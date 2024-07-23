@@ -154,7 +154,7 @@ const RegisterPopupModal = ({ toggleRegisterPopup, switchLogin }) => {
         >
           {isRegisterSuccessfully ? (
             <Alert elevation={6} variant="filled" onClose={handleSnackbarClose} severity="success">
-              Registration successful
+              Registration successfully
             </Alert>
           ) : (
             <Alert elevation={6} variant="filled" onClose={handleSnackbarClose} severity="error">
