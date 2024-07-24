@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { FaKey, FaUser } from "react-icons/fa";
 import { FaArrowRightFromBracket, FaBellConcierge } from "react-icons/fa6";
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { useQueryClient } from "react-query";
 
 import { navbarLinks } from "../../constants";
 import { logout } from "store/userSlice";
@@ -108,15 +107,9 @@ const ProfileDropDown = ({ userData }) => {
 };
 
 const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
-  const queryClient = useQueryClient();
-  const dispatch = useDispatch();
-
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
 
-  // if (token) {
-  //   setIsSignedIn(true);
-  // }
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -154,12 +147,6 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
 
           {/* If signed in show user information */}
           {isSignedIn ? (
-            // <div className="flex-center gap-2 font-semibold p-2 rounded-xl cursor-pointer hover:bg-dark-1">
-            //   <div className="bg-primary p-2 rounded-full">
-            //     <FaUser />
-            //   </div>
-            //   <p>Thiện 1</p>
-            // </div>
             <ProfileDropDown />
           ) : (
             <div className="hidden items-center md:flex gap-5 flex-shrink-0">
