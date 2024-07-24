@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowRightFromBracket, FaDiceD6 } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
 
 import { adminNavbarLinks } from "constants"; // Adjust the import path as necessary
+import { logout } from "store/userSlice";
 
-const AdminNavbar = ({ setLogout }) => {
+const AdminNavbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false);
 
   const toggleNavbar = () => {
     setMobileNavbarOpen(!mobileNavbarOpen);
+  };
+
+  const handleSignOut = () => {
+    dispatch(logout());
+    navigate('/admin/login');
   };
 
   return (
@@ -49,19 +58,17 @@ const AdminNavbar = ({ setLogout }) => {
           <div className="mt-auto px-4 w-full">
             <button
               className="flex gap-4 w-full items-center mb-2 hover:bg-primary py-4 px-6 rounded-md body-bold text-dark-3"
-              onClick={() => setLogout(true)}
+              onClick={handleSignOut}
             >
               <FaArrowRightFromBracket />
               <span className="hidden md:block">Logout</span>
             </button>
-            
+
             <div className="hidden md:block text-center tiny-medium w-full pt-2 border-t-2 border-black">
               <p>© 2024 The Cozy Nook</p>
               <p>All rights reserved</p>
             </div>
           </div>
-
-          {/* Copyright */}
         </div>
       </div>
     </nav>

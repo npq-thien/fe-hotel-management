@@ -1,5 +1,5 @@
 import { Home, ProfilePage, RoomPage, ServicePage, RoomDetail, BookingPage, PromotionPage } from "./pages/customer";
-import { AdminDashboard, AdminRooms, AdminServices, AdminBookings, AdminGuests, AdminPromotions } from "./pages/admin";
+import { AdminDashboard, AdminRooms, AdminServices, AdminBookings, AdminGuests, AdminPromotions, AdminLogin } from "./pages/admin";
 
 export const routes = [
   // Customer routes
@@ -13,6 +13,7 @@ export const routes = [
 
   // Admin routes
   { path: "/admin", element: <AdminDashboard />, title: "Admin Dashboard" },
+  { path: "/admin/login", element: <AdminLogin />, title: "Admin Login" },
   { path: "/admin/bookings", element: <AdminBookings />, title: "Admin Bookings" },
   { path: "/admin/guests", element: <AdminGuests />, title: "Admin Guests" },
   { path: "/admin/rooms", element: <AdminRooms />, title: "Admin Rooms" },
