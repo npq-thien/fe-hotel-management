@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { Alert, Snackbar } from "@mui/material";
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
 
 import { useSignInAccount } from "api/authApi";
 import { login } from "store/userSlice";
@@ -21,7 +21,7 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
   const [isSignInSuccessfully, setIsSignInSuccessfully] = useState();
 
   const handleSnackbarClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     setShowSnackbar(false);
@@ -30,20 +30,19 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
   const {
     mutate: signInAccount,
     isLoading,
-    data,
     error,
   } = useMutation({
     mutationFn: useSignInAccount,
     onSuccess: async (data) => {
-      setIsSignInSuccessfully(true)
-      dispatch(login(data))
-      setShowSnackbar(true)
-      await new Promise(r => setTimeout(r, 1000))
+      setIsSignInSuccessfully(true);
+      dispatch(login(data));
+      setShowSnackbar(true);
+      await new Promise((r) => setTimeout(r, 1000));
       window.location.reload();
     },
     onError: (error) => {
-      setShowSnackbar(true)
-      setIsSignInSuccessfully(false)
+      setShowSnackbar(true);
+      setIsSignInSuccessfully(false);
     },
   });
 
@@ -70,7 +69,6 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
             </label>
             <input
               type="text"
-              id="username"
               className="p-2 border rounded-lg"
               placeholder="Enter your username"
               {...register("username", { required: "Username is required" })}
@@ -83,7 +81,6 @@ const LoginPopupModal = ({ toggleLoginPopup, switchRegister }) => {
             </label>
             <input
               type="password"
-              id="password"
               className="p-2 border rounded-lg"
               placeholder="Enter your password"
               {...register("password", { required: "Password is required" })}

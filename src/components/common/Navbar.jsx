@@ -26,17 +26,17 @@ const ProfileDropDown = ({ userData }) => {
     {
       title: "Edit profile",
       icon: <FaUser />,
-      link: "/",
+      link: "/profile",
     },
     {
       title: "My booking",
       icon: <FaBellConcierge />,
-      link: "/",
+      link: "/bookings",
     },
     {
       title: "Change password",
       icon: <FaKey />,
-      link: "/",
+      link: "/change-password",
     },
     {
       title: "Log out",
@@ -109,7 +109,6 @@ const ProfileDropDown = ({ userData }) => {
 const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
-
 
   useEffect(() => {
     const token = localStorage.getItem("token");
