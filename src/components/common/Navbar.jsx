@@ -146,12 +146,6 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
 
           {/* If signed in show user information */}
           {isSignedIn ? (
-            // <div className="flex-center gap-2 font-semibold p-2 rounded-xl cursor-pointer hover:bg-dark-1">
-            //   <div className="bg-primary p-2 rounded-full">
-            //     <FaUser />
-            //   </div>
-            //   <p>Thiện 1</p>
-            // </div>
             <ProfileDropDown />
           ) : (
             <div className="hidden items-center md:flex gap-5 flex-shrink-0">
