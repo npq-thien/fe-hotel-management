@@ -1,5 +1,4 @@
 import axios from 'axios';
-import store from '../store';
 
 const BASE_URL = process.env.REACT_APP_API;
 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import { CustomerLayout } from "../../components/layout"; // Adjust import as per your file structure
 import { ImageSliderRoom, RoomSpec, RoomAmenities } from "../../components/rooms";

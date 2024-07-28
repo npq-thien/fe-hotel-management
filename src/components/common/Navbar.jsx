@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { FaKey, FaUser } from "react-icons/fa";
 import { FaArrowRightFromBracket, FaBellConcierge } from "react-icons/fa6";
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { useQueryClient } from "react-query";
 
 import { navbarLinks } from "../../constants";
 import { logout } from "store/userSlice";
@@ -27,17 +26,17 @@ const ProfileDropDown = ({ userData }) => {
     {
       title: "Edit profile",
       icon: <FaUser />,
-      link: "/",
+      link: "/profile",
     },
     {
       title: "My booking",
       icon: <FaBellConcierge />,
-      link: "/",
+      link: "/bookings",
     },
     {
       title: "Change password",
       icon: <FaKey />,
-      link: "/",
+      link: "/change-password",
     },
     {
       title: "Log out",
@@ -108,15 +107,8 @@ const ProfileDropDown = ({ userData }) => {
 };
 
 const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
-  const queryClient = useQueryClient();
-  const dispatch = useDispatch();
-
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
-
-  // if (token) {
-  //   setIsSignedIn(true);
-  // }
 
   useEffect(() => {
     const token = localStorage.getItem("token");

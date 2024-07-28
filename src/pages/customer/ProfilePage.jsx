@@ -1,136 +1,108 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useMutation } from "react-query";
+import { useForm } from "react-hook-form";
 
-import EditableField from "components/common/EditableField";
 import { CustomerLayout } from "components/layout";
+import { useGetCurrentUser, useUpdateCurrentUser } from "api/customer/userApi";
+import Notification from "components/common/Notification";
+import { NOTIFICATION_TYPES } from "constants/type";
 
 const ProfilePage = () => {
+  const { register, handleSubmit, reset } = useForm();
   const [isEditable, setIsEditable] = useState(false);
+  const [notification, setNotification] = useState(null);
 
-  const [username, setUsername] = useState("JohnDoe");
+  const { data: profileData } = useGetCurrentUser();
 
-  // useGetProfile()
+  useEffect(() => {
+    if (profileData) {
+      reset(profileData);
+    }
+  }, [profileData, reset]);
+
+  const { mutate: updateProfile, isLoading: isUpdatingProfile } = useMutation({
+    mutationFn: useUpdateCurrentUser,
+    onSuccess: () => {
+      setIsEditable(false);
+      setNotification("Profile updated successfully!");
+    },
+  });
+
+  const onSubmit = (data) => {
+    updateProfile(data);
+  };
 
   return (
     <CustomerLayout>
-      <div className="bg-white rounded-lg shadow-lg flex-col flex mx-auto p-8 m-4 gap-5 w-full max-w-md">
-        <h3 className="text-primary h3-semibold">User information</h3>
+      {notification && <Notification message={notification} onClose={() => setNotification(null)} type={NOTIFICATION_TYPES.SUCCESS} />}
+      <div className="bg-white rounded-lg border border-primary-1 flex-col flex mx-auto p-8 m-4 gap-5 w-full max-w-md">
+        <div className="flex-between">
+          <h3 className="text-primary h3-semibold">User information</h3>
+          <button className="btn-primary px-4 bg-blue-400" onClick={() => setIsEditable(true)}>
+            Edit
+          </button>
+        </div>
 
-        <div className="flex flex-col gap-2">
-          <label className="text-dark-4">
-            Username
-          </label>
-          <EditableField value={username} onChange={setUsername} isEditable={isEditable} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-dark-4">
-            Full name
-          </label>
-          <EditableField value={username} onChange={setUsername} isEditable={isEditable} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-dark-4">
-            Email
-          </label>
-          <EditableField value={username} onChange={setUsername} isEditable={isEditable} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-dark-4">
-            Phone
-          </label>
-          <EditableField value={username} onChange={setUsername} isEditable={isEditable} />
-        </div>
+        <form className="flex-col flex gap-4" onSubmit={handleSubmit(onSubmit)}>
+          <div className="flex flex-col gap-2">
+            <label className="text-dark-4 font-semibold">Username</label>
+            <input
+              className="p-2 border rounded-lg min-h-10"
+              {...register("username")}
+              defaultValue={profileData?.username}
+              disabled={!isEditable}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-dark-4 font-semibold">Full name</label>
+            <input
+              className="p-2 border rounded-lg min-h-10"
+              {...register("fullName")}
+              defaultValue={profileData?.fullName}
+              disabled={!isEditable}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-dark-4 font-semibold">Email</label>
+            <input
+              className="p-2 border rounded-lg min-h-10"
+              {...register("email")}
+              defaultValue={profileData?.email}
+              disabled={!isEditable}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="phone" className="text-dark-4 font-semibold">
+              Phone
+            </label>
+            <input
+              className="p-2 border rounded-lg min-h-10"
+              {...register("phone")}
+              defaultValue={profileData?.phone || ""}
+              disabled={!isEditable}
+            />
+          </div>
+
+          <div className="flex gap-4 ml-auto mt-4">
+            <button
+              className={isEditable ? "btn-secondary" : "btn-disabled"}
+              onClick={() => setIsEditable(false)}
+              disabled={!isEditable}
+            >
+              Cancel
+            </button>
+            <button
+              className={isEditable ? "btn-primary px-4" : "btn-disabled px-4"}
+              disabled={!isEditable}
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
+        </form>
       </div>
     </CustomerLayout>
   );
 };
 
 export default ProfilePage;
-
-
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// const EditableField = ({ label, value, onChange, isEditable }) => {
-//   return (
-//     <div className="flex flex-col gap-2">
-//       <label className="text-dark-4">{label}</label>
-//       {isEditable ? (
-//         <input
-//           type="text"
-//           value={value}
-//           onChange={(e) => onChange(e.target.value)}
-//           className="p-2 border rounded-lg"
-//           placeholder={`Enter your ${label.toLowerCase()}`}
-//         />
-//       ) : (
-//         <span className="p-2 border rounded-lg">{value}</span>
-//       )}
-//     </div>
-//   );
-// };
-
-// const ProfilePage = () => {
-//   const [profile, setProfile] = useState({
-//     username: '',
-//     fullName: '',
-//     email: '',
-//     phone: '',
-//   });
-//   const [isEditable, setIsEditable] = useState(false);
-
-//   useEffect(() => {
-//     // Fetch the profile data from the API
-//     const fetchProfile = async () => {
-//       try {
-//         const response = await axios.get('/api/profile');
-//         setProfile(response.data);
-//       } catch (error) {
-//         console.error('Error fetching profile data', error);
-//       }
-//     };
-
-//     fetchProfile();
-//   }, []);
-
-//   const handleInputChange = (field, value) => {
-//     setProfile((prevProfile) => ({
-//       ...prevProfile,
-//       [field]: value,
-//     }));
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={() => setIsEditable(!isEditable)}>
-//         {isEditable ? 'Save' : 'Edit'}
-//       </button>
-//       <EditableField
-//         label="Username"
-//         value={profile.username}
-//         onChange={(value) => handleInputChange('username', value)}
-//         isEditable={isEditable}
-//       />
-//       <EditableField
-//         label="Full name"
-//         value={profile.fullName}
-//         onChange={(value) => handleInputChange('fullName', value)}
-//         isEditable={isEditable}
-//       />
-//       <EditableField
-//         label="Email"
-//         value={profile.email}
-//         onChange={(value) => handleInputChange('email', value)}
-//         isEditable={isEditable}
-//       />
-//       <EditableField
-//         label="Phone"
-//         value={profile.phone}
-//         onChange={(value) => handleInputChange('phone', value)}
-//         isEditable={isEditable}
-//       />
-//     </div>
-//   );
-// };
-
-// export default ProfilePage;
-

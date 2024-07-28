@@ -1,5 +1,5 @@
 import { IoMdPricetags, IoIosBed } from "react-icons/io";
-import { FaCheckToSlot, FaHouse, FaUser, FaBellConcierge, FaKey, FaArrowRightFromBracket } from "react-icons/fa6";
+import { FaCheckToSlot, FaHouse, FaUser, FaBellConcierge } from "react-icons/fa6";
 
 
 export const navbarLinks = [
