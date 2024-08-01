@@ -10,11 +10,10 @@ import { formatPrice } from "utils/helper";
 const RoomDetail = () => {
   const roomId = useLocation().pathname.split("/")[2];
 
-  const { data: room } = useGetRoomDetailById(roomId);
-  const { data: reviewData } = useGetReviewsByRoomId(roomId);
-  // console.log("yes", ratingData);
+  const { data: room, isLoading: isRoomLoading } = useGetRoomDetailById(roomId);
+  const { data: reviewData, isLoading: isReviewLoading } = useGetReviewsByRoomId(roomId);
 
-  if (!room) {
+  if (isRoomLoading || isReviewLoading) {
     return (
       <CustomerLayout>
         <div className="flex-center m-5">
