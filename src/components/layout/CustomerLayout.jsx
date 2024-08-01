@@ -25,7 +25,7 @@ const CustomerLayout = ({ children }) => {
         <Navbar setLoginPopup={setLoginPopup} setRegisterPopup={setRegisterPopup} />
       </div>
 
-      <div className="z-10">{children}</div>
+      <div className="z-10 bg-light-1">{children}</div>
 
       {/* Render login/register form */}
       {loginPopup && <LoginPopupModal toggleLoginPopup={toggleLoginPopup} switchRegister={switchRegisterAndLogin} />}

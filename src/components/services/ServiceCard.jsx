@@ -5,7 +5,7 @@ const ServiceCard = ({ service, title, introduction, imgUrl, isImgLeft }) => {
     // If medium device
     <div className="md:flex max-w-5xl px-4 w-full mx-auto transition-transform duration-300 hover:scale-105">
       {isImgLeft && <img className="md:w-1/2 bg-cover hover:cursor-pointer" src={imgUrl} alt={title} />}
-      <div className="flex flex-col justify-between bg-light-1 p-4">
+      <div className="flex flex-col justify-between bg-white p-4">
         <div>
           <h3 className="h3 uppercase text-primary" style={{ letterSpacing: "4px" }}>
             {service}

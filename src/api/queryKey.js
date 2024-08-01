@@ -12,6 +12,7 @@ export const QUERY_KEYS = {
   // ROOM KEYS
   GET_ROOMS: "getAllRooms",
   GET_ROOM_BY_ID: "getRoomById",
+  GET_REVIEWS_BY_ROOM_ID: "getReviewsByRoomId",
 
   // SERVICE KEYS
   GET_SERVICES: "getAllServices",

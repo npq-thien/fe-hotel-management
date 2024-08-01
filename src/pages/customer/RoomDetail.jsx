@@ -2,15 +2,17 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { CustomerLayout } from "../../components/layout"; // Adjust import as per your file structure
-import { ImageSliderRoom, RoomSpec, RoomAmenities } from "../../components/rooms";
+import { ImageSliderRoom, RoomSpec, RoomAmenities, ReviewAndRating } from "../../components/rooms";
 import CustomCircularProgress from "components/common/CustomCircularProgress";
-import { useGetRoomDetailById } from "api/customer/roomApi";
+import { useGetReviewsByRoomId, useGetRoomDetailById } from "api/customer/roomApi";
 import { formatPrice } from "utils/helper";
 
 const RoomDetail = () => {
   const roomId = useLocation().pathname.split("/")[2];
 
   const { data: room } = useGetRoomDetailById(roomId);
+  const { data: reviewData } = useGetReviewsByRoomId(roomId);
+  // console.log("yes", ratingData);
 
   if (!room) {
     return (
@@ -42,10 +44,7 @@ const RoomDetail = () => {
       <nav class="flex p-4 pl-6" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li class="inline-flex items-center">
-            <Link
-              to="/rooms"
-              class="inline-flex items-center text-lg font-medium text-gray-700 hover:text-primary-1"
-            >
+            <Link to="/rooms" class="inline-flex items-center text-lg font-medium text-gray-700 hover:text-primary-1">
               Rooms
             </Link>
           </li>
@@ -96,6 +95,7 @@ const RoomDetail = () => {
         </Link>
 
         {/* Review and rating */}
+        <ReviewAndRating data={reviewData} />
       </div>
     </CustomerLayout>
   );

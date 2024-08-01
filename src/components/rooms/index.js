@@ -4,3 +4,5 @@ export { default as RoomCard } from './RoomCard';
 export { default as RoomsGrid } from './RoomsGrid';
 export { default as RoomSpec } from './RoomSpec';
 export { default as RoomAmenities } from './RoomAmenities';
+export { default as ReviewAndRating } from "./ReviewAndRating";
+export { default as ReviewCard } from "./ReviewCard";

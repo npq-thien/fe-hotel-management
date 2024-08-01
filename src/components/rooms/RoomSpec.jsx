@@ -5,7 +5,7 @@ import { FaBath, FaBed, FaRulerCombined, FaUsers } from "react-icons/fa6";
 const RoomSpec = ({ roomData }) => {
   // console.log("specification", roomData);
   return (
-    <div className="w-3/4 max-w-4xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800 bg-gray-100 rounded-lg">
+    <div className="w-3/4 max-w-4xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800 bg-white rounded-lg">
       <div className="flex items-start space-x-4">
         <FaRulerCombined className="text-primary text-2xl" />
         <div>

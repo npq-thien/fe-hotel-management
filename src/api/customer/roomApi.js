@@ -20,7 +20,7 @@ export const useGetAllRooms = () => {
     queryKey: [QUERY_KEYS.GET_ROOMS],
     queryFn: () => fetchData(),
     onError: (error) => {
-      console.log('error', error)
+      console.log("error", error);
     },
     refetchOnWindowFocus: false,
   });
@@ -40,9 +40,35 @@ export const useGetRoomDetailById = (id) => {
     queryKey: [QUERY_KEYS.GET_ROOM_BY_ID, id],
     queryFn: () => fetchData(),
     onError: (error) => {
-      console.log('error', error)
+      console.log("error", error);
     },
     refetchOnWindowFocus: false,
     enabled: !!id,
+  });
+};
+
+export const useGetReviewsByRoomId = (roomId) => {
+  const fetchData = async () => {
+    try {
+      const response = await api.get(`${BASE_URL}/room-review?roomTypeId=${roomId}`);
+      // const response = await api.get(`${BASE_URL}/room-review`);
+      console.log("suces", response.data);
+      return response.data;
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+
+  return useQuery({
+    queryKey: [QUERY_KEYS.GET_REVIEWS_BY_ROOM_ID, roomId],
+    queryFn: () => fetchData(),
+    onSuccess: (data) => {
+      console.log("yes", data);
+    },
+    onError: (error) => {
+      console.log("oh my god", error);
+    },
+    refetchOnWindowFocus: false,
+    enabled: !!roomId,
   });
 };
