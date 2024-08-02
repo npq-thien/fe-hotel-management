@@ -8,6 +8,7 @@ import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from 
 
 import { navbarLinks } from "../../constants";
 import { logout } from "store/userSlice";
+import { useGetCurrentUser } from "api/customer/userApi";
 
 const ProfileDropDown = ({ userData }) => {
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ const ProfileDropDown = ({ userData }) => {
         <div className="bg-primary p-2 rounded-full">
           <FaUser />
         </div>
-        <p className="select-none">{userData?.name || "User"}</p>
+        <p className="select-none">{userData?.fullName || "User"}</p>
 
         {dropDownProfile && (
           <div className="absolute top-full right-2 mt-2">
@@ -110,6 +111,15 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
 
+  // Only query profile data when token already existed 
+  let profileData;
+  if (localStorage.getItem("token")) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { data } = useGetCurrentUser();
+    profileData = data;
+    // console.log(profileData)
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -146,7 +156,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
 
           {/* If signed in show user information */}
           {isSignedIn ? (
-            <ProfileDropDown />
+            <ProfileDropDown userData={profileData} />
           ) : (
             <div className="hidden items-center md:flex gap-5 flex-shrink-0">
               <Link

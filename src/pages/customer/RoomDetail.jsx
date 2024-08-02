@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { CustomerLayout } from "../../components/layout"; // Adjust import as per your file structure
@@ -43,7 +42,10 @@ const RoomDetail = () => {
       <nav className="flex p-4 pl-6" aria-label="Breadcrumb">
         <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li className="inline-flex items-center">
-            <Link to="/rooms" className="inline-flex items-center text-lg font-medium text-gray-700 hover:text-primary-1">
+            <Link
+              to="/rooms"
+              className="inline-flex items-center text-lg font-medium text-gray-700 hover:text-primary-1"
+            >
               Rooms
             </Link>
           </li>
@@ -94,7 +96,7 @@ const RoomDetail = () => {
         </Link>
 
         {/* Review and rating */}
-        <ReviewAndRating data={reviewData} />
+        <ReviewAndRating data={reviewData} roomId={roomId} />
       </div>
     </CustomerLayout>
   );
