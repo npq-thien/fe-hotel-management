@@ -10,6 +10,7 @@ const ReviewAndRating = ({ data, roomId }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [reviewContent, setReviewContent] = useState("");
   const [ratingStar, setRatingStar] = useState(0);
 
@@ -45,8 +46,13 @@ const ReviewAndRating = ({ data, roomId }) => {
         window.location.reload();
       },
       onError: (error) => {
-        console.error("Error submitting review:", error);
-      }
+        setShowReviewModal(false);
+        setReviewContent("");
+        setRatingStar(0);
+        setShowSnackbar(true);
+        setErrorMessage(error.response.data.message);
+        console.log("Error submitting review:", error.response.data.message);
+      },
     });
   };
 
@@ -81,7 +87,7 @@ const ReviewAndRating = ({ data, roomId }) => {
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert elevation={6} variant="filled" onClose={handleSnackbarClose} severity="warning">
-          You must login to write a review!
+          {errorMessage ? errorMessage : "You must login to write a review!"}
         </Alert>
       </Snackbar>
       <Dialog open={showReviewModal} onClose={handleCloseReviewModal}>
@@ -122,7 +128,7 @@ const ReviewAndRating = ({ data, roomId }) => {
       </div>
       <div className="flex items-center gap-4 my-4">
         <p className="h3-semibold text-yellow-500">{data.averageStar}</p>
-        <Rating name="read-only" value={data.averageStar} readOnly precision={0.5} size="large" />
+        <Rating name="read-only" value={data.averageStar} readOnly precision={0.1} size="large" />
         <p className="">{data.total} reviews</p>
       </div>
       <div className="flex flex-col gap-4">
