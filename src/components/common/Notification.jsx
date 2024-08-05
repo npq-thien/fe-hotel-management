@@ -9,14 +9,14 @@ const Notification = ({ message, onClose, type }) => {
     const timer = setTimeout(() => {
       setShow(false);
       onClose();
-    }, 3000);
+    }, 100000);
     return () => clearTimeout(timer);
   }, [onClose]);
 
   if (type === NOTIFICATION_TYPES.SUCCESS) {
     return (
       <div
-        className={`fixed bottom-4 right-4 p-4 bg-green-500 text-white rounded shadow-lg z-10 transition duration-500 ease-in-out transform ${
+        className={`fixed bottom-4 right-4 p-4 bg-green-500 text-white rounded shadow-lg z-30 transition duration-500 ease-in-out transform ${
           show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >

@@ -11,8 +11,7 @@ import {
 } from "react-icons/pi";
 
 import { CustomerLayout } from "../../components/layout";
-import { ImageSlider } from "../../components";
-import { Card } from "components/common";
+import { Card, ImageSlider } from "components/common";
 import { slideImages, homeCard } from "../../constants";
 import { Link } from "react-router-dom";
 import SlickSlider from "components/common/SlickSlider";

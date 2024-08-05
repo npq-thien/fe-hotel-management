@@ -3,16 +3,15 @@ import React from "react";
 import { RoomCard } from "../rooms";
 import { useGetAllRooms } from "api/customer/roomApi";
 import { formatPrice } from "utils/helper";
-import CustomCircularProgress from "components/common/CustomCircularProgress";
+import { CustomCircularProgress } from "components/common";
 
 const RoomsGrid = () => {
-  const {data} = useGetAllRooms();
-
+  const { data } = useGetAllRooms();
 
   return (
     <>
       {!data ? (
-        <div className="flex-center m-5">
+        <div className="flex-center p-5">
           <CustomCircularProgress />
         </div>
       ) : (
