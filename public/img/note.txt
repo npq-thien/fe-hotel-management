@@ -1,0 +1,3 @@
+resolution images:
+- Room: 960x600
+- Image for image slider in home page: 1920x1200
