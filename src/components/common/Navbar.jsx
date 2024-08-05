@@ -81,7 +81,7 @@ const ProfileDropDown = ({ userData }) => {
                       }}
                       disablePadding
                     >
-                      <Link to={item.link} onClick={item.onClick}>
+                      <Link className="w-full" to={item.link} onClick={item.onClick}>
                         <ListItemButton
                           sx={{
                             "&:hover": {
@@ -111,7 +111,7 @@ const Navbar = ({ setLoginPopup, setRegisterPopup }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
 
-  // Only query profile data when token already existed 
+  // Only query profile data when token already existed
   let profileData;
   if (localStorage.getItem("token")) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
